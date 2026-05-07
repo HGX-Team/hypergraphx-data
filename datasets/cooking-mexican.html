@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cooking-mexican</title>
+    <meta name="description" content="Recipe hypergraph from Mexican cuisine (Mexico). Nodes represent ingredients. Each hyperedge represents a recipe and contains the set of ingredients used in that recipe.">
+    <meta property="og:title" content="cooking-mexican">
+    <meta property="og:description" content="Recipe hypergraph from Mexican cuisine (Mexico). Nodes represent ingredients. Each hyperedge represents a recipe and contains the set of ingredients used in that recipe.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../static/images/logo_cropped-removedbg.png">
+    <link rel="icon" type="image/png" href="../static/images/logo_cropped-removedbg.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css"> <!-- Link to your global stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Bootstrap Navbar (Header) with Burger Menu -->
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="../index.html">
+                <img src="../static/images/logo_cropped-removedbg-whitegraph.png" alt="HGX Logo" width="30" height="30" class="d-inline-block align-text-center">
+                Hypergraphx-data
+            </a>
+            
+            <!-- Burger Icon for Collapsing Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../statistics.html"><i class="fa-solid fa-database"></i> Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html"><i class="fa-solid fa-address-card"></i> About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-muted dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-link"></i> Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx/tree/main/tutorials" target="_blank" rel="noopener noreferrer">Tutorials <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/pszufe/HIF-standard" target="_blank" rel="noopener noreferrer">HIF <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://hypergraphx.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Docs <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main id="mainContent">
+    <div class="container mt-3">
+        <div class="text-center">
+            <img src="../static/images/logo.png" alt="Hypergraphx-data" class="page-logo">
+        </div>
+
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Datasets</a></li>
+                <li class="breadcrumb-item active" aria-current="page">cooking-mexican</li>
+            </ol>
+        </nav>
+
+        <h1 class="dataset-title">cooking-mexican</h1>
+        
+
+        <!-- Dataset Tags -->
+        <div class="mb-3 text-center dataset-tags">
+            <h4 style="display: inline;">Tags: </h4>
+            <span><a class="tag tag-link" href="../index.html?tags=Undirected" aria-label="Filter catalog by tag Undirected">Undirected</a> <a class="tag tag-link" href="../index.html?tags=Food" aria-label="Filter catalog by tag Food">Food</a></span> <!-- Tags will be replaced dynamically -->
+        </div>
+
+        <!-- Dataset Description -->
+        <div class="mb-3">
+            <h4><i class="fa-solid fa-circle-info section-title-icon"></i> Description</h4>
+            <p>Recipe hypergraph from Mexican cuisine (Mexico). Nodes represent ingredients. Each hyperedge represents a recipe and contains the set of ingredients used in that recipe.</p> <!-- Description will be replaced dynamically -->
+        </div>
+
+        <div class="dataset-mini-nav" aria-label="Jump to section">
+            <span class="mini-nav-label">Jump to</span>
+            <a href="#stats">Stats</a>
+            <a href="#downloads">Download</a>
+            <a href="#metadata">Metadata</a>
+            <a href="#related">Related</a>
+            <a href="#citation">Citation</a>
+        </div>
+
+        <!-- Dataset Statistics -->
+        <div class="mb-3" id="stats">
+            <h4><i class="fa-solid fa-chart-column section-title-icon"></i> Basic statistics</h4>
+            <ul>
+                <li><b>Nodes:</b> 2684</li> <!-- Nodes will be replaced dynamically -->
+                <li><b>Hyperedges:</b> 6376</li> <!-- Hyperedges will be replaced dynamically -->
+                <li><b>Unique hyperedges:</b> 6376</li>
+                <li><b>Max size hyperedge:</b> 52</li>
+            </ul>
+        </div>
+
+        <!-- Hypergraph Metadata -->
+        <div id="metadata"></div>
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Hypergraph metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>name</b></td><td>(STRING) Dataset name (e.g., cooking-mexican).</td></tr><tr><td><b>type</b></td><td>(STRING) Hypergraph type (e.g., Hypergraph).</td></tr><tr><td><b>version</b></td><td>(STRING) Dataset version (e.g., 1.0.0).</td></tr><tr><td><b>weighted</b></td><td>(BOOL) Whether the hypergraph is weighted (e.g., false).</td></tr></tbody></table></div>
+
+        <!-- Nodes Metadata -->
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Node metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>name</b></td><td>(STRING) Name of the food ingredient (e.g., olive oil).</td></tr></tbody></table></div>
+
+        <!-- Edges Metadata -->
+        
+
+        <div class="chart-panel">
+            <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
+            <div class="chart-container chart-container-left">
+                <canvas id="edgeSizeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-panel" id="timeDistSection" style="display: none;">
+            <h4><i class="fa-solid fa-clock section-title-icon"></i> Hyperedge temporal distribution</h4>
+            <div class="chart-container chart-container-left">
+                <div class="chart-subtitle" id="timeSubtitle"></div>
+                <canvas id="timeDistributionChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-panel">
+            <h4><i class="fa-solid fa-chart-line section-title-icon"></i> Hyperdegree distribution</h4>
+            <div class="chart-container chart-container-left">
+                <canvas id="nodeDistributionChart"></canvas>
+            </div>
+        </div>
+      
+
+        <div class="mb-3" id="downloads">
+            <div class="mb-3">
+<h4><i class="fa-solid fa-download section-title-icon"></i> Download</h4>
+<ul class="versions-list">
+
+        <li>
+            <span class="version-label">Version 1.0</span>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/cooking-mexican/cooking-mexican.hgx.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(314.6 KB)</span>
+            </a>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/cooking-mexican/cooking-mexican.json.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(139.3 KB)</span>
+            </a>
+        </li>
+        </ul>
+</div>
+
+        </div>
+
+        <div id="related"></div>
+        <div class="mb-4" id="relatedDatasets" data-current-dataset="cooking-mexican" data-vertices="2684" data-edges="6376">
+            <h4><i class="fa-solid fa-diagram-project section-title-icon"></i> Related datasets</h4>
+            <div class="related-datasets-list" id="relatedDatasetsList">
+                <div class="text-muted">Loading related datasets...</div>
+            </div>
+        </div>
+        
+
+        <!-- Provenance -->
+        <div class="mb-3" id="provenance">
+            <h4><i class="fa-solid fa-link section-title-icon"></i> Provenance</h4>
+            <p><strong>Source:</strong> <a href="https://www.cs.cornell.edu/~arb/data/cat-edge-Cooking/" target="_blank" rel="noopener noreferrer">https://www.cs.cornell.edu/~arb/data/cat-edge-Cooking/</a></p>
+<p><strong>License:</strong> <span class="text-muted">Not specified. Please refer to the original source for licensing terms.</span></p>
+<p><strong>Reproducibility:</strong> <a href="https://github.com/HGX-Team/hypergraphx-data/tree/main/reproducibility/cooking-mexican" target="_blank" rel="noopener noreferrer">Instructions and scripts</a></p>
+        </div>
+
+        <!-- BibTeX Display -->
+
+        <div class="mb-3" id="citation">
+            <h4><i class="fa-solid fa-quote-right section-title-icon"></i> Citation</h4>
+            <p>When this data is used in published research or for visualization purposes, please cite the following:</p>
+        
+            <button class="btn btn-sm btn-primary" style="background-color: #136c16; border-color: #19531b;" type="button" data-bs-toggle="collapse" data-bs-target="#bibtexContainer" aria-expanded="false" aria-controls="bibtexContainer">
+                Show BibTeX <i class="fa-solid fa-angle-down"></i>
+            </button>
+        
+            <div class="collapse mt-2" id="bibtexContainer">
+                <pre class="bibtex-container" id="bibtexContent">
+                    <button class="copy-button" onclick="copyBibTex()">Copy</button>
+                    <span class="copy-status" id="copyStatus">Copied!</span>
+                    @inproceedings{amburg2020clustering,
+  title={Clustering in graphs and hypergraphs with categorical edge labels},
+  author={Amburg, Ilya and Veldt, Nate and Benson, Austin},
+  booktitle={Proceedings of the web conference 2020},
+  pages={706--717},
+  year={2020}
+}
+                </pre>
+            </div>
+        </div>
+
+        <!-- Back to Home Link -->
+        <div class="text-center mt-3">
+            <a href="../index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Data Repository</a> <!-- Button to go back to the main page -->
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+        <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+	    <footer class="footer-custom bg-dark text-white py-3">
+	        <div class="container text-center">
+	            <div>Hypergraphx-data: a repository of higher-order network datasets · © <span id="footerYear">2026</span></div>
+	        </div>
+	    </footer>
+    <script>
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for Copying BibTeX -->
+    <script>
+    function copyBibTex() {
+        const bibtexContentDiv = document.getElementById("bibtexContent");
+        if (!bibtexContentDiv) return;
+
+        // Extract only the text content, ignoring nested HTML and elements
+        const bibtexText = Array.from(bibtexContentDiv.childNodes)
+            .filter(node => node.nodeType === Node.TEXT_NODE)
+            .map(node => node.textContent.trim())
+            .join("\n");
+
+        const showCopied = () => {
+            const copyStatus = document.getElementById("copyStatus");
+            if (!copyStatus) return;
+            copyStatus.style.display = "inline";
+            setTimeout(() => {
+                copyStatus.style.display = "none";
+            }, 2000);
+        };
+
+        const fallbackCopy = () => {
+            const ta = document.createElement('textarea');
+            ta.value = bibtexText;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            ta.setSelectionRange(0, ta.value.length);
+            try {
+                document.execCommand('copy');
+                showCopied();
+            } finally {
+                ta.remove();
+            }
+        };
+
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            navigator.clipboard.writeText(bibtexText).then(showCopied).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
+        }
+    }
+
+    </script>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const hyperedgeBins = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 18, 23, 28, 34, 42, 52];
+const hyperedgeBinLabels = ["1", "2", "3", "4", "5", "6\u20137", "8\u20139", "10\u201311", "12\u201314", "15\u201317", "18\u201322", "23\u201327", "28\u201333", "34\u201341", "42\u201351", "52"];
+const hyperedgeFrequencies = [2, 19, 70, 178, 289, 1075, 1164, 1086, 1204, 723, 466, 70, 24, 4, 1, 1];
+    const timeSeriesX = [];
+const timeSeriesY = [];
+const timeSeriesStart = [];
+const timeSeriesEnd = [];
+const timeIsEpoch = false;
+const timeBucketSeconds = 0;
+const timeGranularity = "unit";
+    const degreeBins = [1, 2, 3, 5, 8, 12, 18, 28, 42, 64, 97, 148, 224, 339, 515, 780, 1183, 2720];
+const degreeBinLabels = ["1", "2", "3\u20134", "5\u20137", "8\u201311", "12\u201317", "18\u201327", "28\u201341", "42\u201363", "64\u201396", "97\u2013147", "148\u2013223", "224\u2013338", "339\u2013514", "515\u2013779", "780\u20131182", "1183\u20131793", "2720"];
+const degreeFrequencies = [966, 371, 345, 271, 166, 111, 116, 73, 69, 63, 35, 34, 23, 10, 13, 12, 5, 1];
+    
+
+    // Plot Hyperedge Size Distribution
+    const ctx1 = document.getElementById('edgeSizeChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Hyperedge Size Distribution (Binned)',
+                data: hyperedgeBins.map((d, i) => ({ x: d, y: hyperedgeFrequencies[i] })),
+                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    title: { display: true, text: 'Hyperedge size bin (left edge)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        maxRotation: 0,
+                        padding: 6,
+                        callback: (val) => Number(val).toLocaleString()
+                    }
+                },
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    min: 1,
+                    title: { display: true, text: 'Count (log scale)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        padding: 6,
+                        callback: (val) => val.toLocaleString()
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => {
+                            const idx = items?.[0]?.dataIndex;
+                            if (typeof idx !== 'number') return '';
+                            if (typeof hyperedgeBinLabels !== 'undefined' && Array.isArray(hyperedgeBinLabels) && hyperedgeBinLabels[idx]) {
+                                return `Size bin: ${hyperedgeBinLabels[idx]}`;
+                            }
+                            return 'Hyperedge size bin';
+                        },
+                        label: (item) => {
+                            const y = item?.parsed?.y;
+                            const count = typeof y === 'number' ? y : Number(y);
+                            return `Count: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Plot Node Degree Distribution
+    const ctx2 = document.getElementById('nodeDistributionChart').getContext('2d');
+    new Chart(ctx2, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Hyperdegree Distribution (Binned)',
+                data: degreeBins.map((d, i) => ({ x: d, y: degreeFrequencies[i] })),
+                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    title: { display: true, text: 'Hyperdegree bin (left edge)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        maxRotation: 0,
+                        padding: 6,
+                        callback: (val) => Number(val).toLocaleString()
+                    }
+                },
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    // min y is 1
+                    min: 1,
+                    title: { display: true, text: 'Frequency (log scale)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        padding: 6,
+                        callback: (val) => val.toLocaleString()
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => {
+                            const idx = items?.[0]?.dataIndex;
+                            if (typeof idx !== 'number') return '';
+                            if (typeof degreeBinLabels !== 'undefined' && Array.isArray(degreeBinLabels) && degreeBinLabels[idx]) {
+                                return `Degree bin: ${degreeBinLabels[idx]}`;
+                            }
+                            return 'Hyperdegree bin';
+                        },
+                        label: (item) => {
+                            const y = item?.parsed?.y;
+                            const count = typeof y === 'number' ? y : Number(y);
+                            return `Frequency: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+        // Plot Hyperedge Temporal Distribution (if provided)
+    const timeSection = document.getElementById('timeDistSection');
+    function formatEpochSeconds(sec) {
+        const ms = sec * 1000;
+        const dt = new Date(ms);
+        const opts = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+        return new Intl.DateTimeFormat(undefined, opts).format(dt);
+    }
+
+    function formatRelativeSeconds(sec) {
+        if (sec >= 365 * 86400) {
+            const years = sec / (365 * 86400);
+            return `+${years.toFixed(years < 10 ? 1 : 0)}y`;
+        }
+        if (sec >= 30 * 86400) {
+            const months = sec / (30 * 86400);
+            return `+${months.toFixed(months < 10 ? 1 : 0)}mo`;
+        }
+        if (sec >= 86400) {
+            const days = sec / 86400;
+            return `+${days.toFixed(days < 10 ? 1 : 0)}d`;
+        }
+        if (sec >= 3600) {
+            const hours = sec / 3600;
+            return `+${hours.toFixed(hours < 10 ? 1 : 0)}h`;
+        }
+        if (sec >= 60) {
+            const mins = sec / 60;
+            return `+${mins.toFixed(mins < 10 ? 1 : 0)}m`;
+        }
+        return `+${sec.toFixed(sec < 10 ? 1 : 0)}s`;
+    }
+
+    function formatTimeValue(sec) {
+        if (typeof timeIsEpoch !== 'undefined' && timeIsEpoch) {
+            return formatEpochSeconds(sec);
+        }
+        return formatRelativeSeconds(sec);
+    }
+
+    function formatBucketSeconds(seconds) {
+        const s = Number(seconds);
+        if (!Number.isFinite(s) || s <= 0) return '';
+        if (s >= 365 * 86400) return `${Math.round(s / (365 * 86400))}y`;
+        if (s >= 30 * 86400) return `${Math.round(s / (30 * 86400))}mo`;
+        if (s >= 7 * 86400) return `${Math.round(s / (7 * 86400))}w`;
+        if (s >= 86400) return `${Math.round(s / 86400)}d`;
+        if (s >= 3600) return `${Math.round(s / 3600)}h`;
+        if (s >= 60) return `${Math.round(s / 60)}m`;
+        return `${Math.round(s)}s`;
+    }
+
+    if (typeof timeSeriesX !== 'undefined' && Array.isArray(timeSeriesX) && timeSeriesX.length) {
+        timeSection.style.display = 'block';
+        const ctx3 = document.getElementById('timeDistributionChart').getContext('2d');
+        const subtitle = document.getElementById('timeSubtitle');
+        if (subtitle) {
+            const bucketText = (typeof timeBucketSeconds === 'number' && timeBucketSeconds > 0)
+                ? ` · bucket ${formatBucketSeconds(timeBucketSeconds)}`
+                : '';
+            subtitle.textContent = (typeof timeIsEpoch !== 'undefined' && timeIsEpoch)
+                ? `UTC time (bucketed counts)${bucketText}`
+                : `Time since start (bucketed counts)${bucketText}`;
+        }
+
+        const fill = (() => {
+            const gradient = ctx3.createLinearGradient(0, 0, 0, ctx3.canvas.height || 300);
+            gradient.addColorStop(0, 'rgba(75, 192, 192, 0.22)');
+            gradient.addColorStop(1, 'rgba(75, 192, 192, 0.03)');
+            return gradient;
+        })();
+
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Hyperedge Temporal Distribution',
+                    data: timeSeriesX.map((t, i) => ({ x: t, y: timeSeriesY[i] })),
+                    backgroundColor: fill,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 5,
+                    stepped: true,
+                    tension: 0,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                normalized: true,
+                parsing: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        title: { display: true, text: 'Time' },
+                        grid: { display: false },
+                        ticks: {
+                            autoSkip: true,
+                            autoSkipPadding: 16,
+                            maxRotation: 0,
+                            padding: 6,
+                            callback: (val) => formatTimeValue(Number(val))
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        beginAtZero: true,
+                        title: { display: true, text: 'Count' },
+                        grid: { display: false },
+                        ticks: { padding: 6 }
+                    }
+                },
+                plugins: {
+                    decimation: { enabled: (Array.isArray(timeSeriesX) && timeSeriesX.length > 2000), algorithm: 'lttb', samples: 800 },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            title: (items) => {
+                                const idx = items?.[0]?.dataIndex;
+                                if (typeof idx !== 'number') return '';
+                                const start = Array.isArray(timeSeriesStart) ? timeSeriesStart[idx] : undefined;
+                                const end = Array.isArray(timeSeriesEnd) ? timeSeriesEnd[idx] : undefined;
+                                if (typeof start === 'number' && typeof end === 'number') {
+                                    return `${formatTimeValue(start)} – ${formatTimeValue(end)}`;
+                                }
+                                const t = Array.isArray(timeSeriesX) ? timeSeriesX[idx] : undefined;
+                                return (typeof t === 'number') ? formatTimeValue(t) : 'Time';
+                            },
+                            label: (item) => {
+                                const y = item?.parsed?.y;
+                                const count = typeof y === 'number' ? y : Number(y);
+                                return `Count: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+
+	    document.addEventListener("DOMContentLoaded", function () {
+	        const bibtexButton = document.querySelector('[data-bs-target="#bibtexContainer"]');
+	        const bibtexContainer = document.getElementById("bibtexContainer");
+
+	        bibtexContainer.addEventListener("shown.bs.collapse", function () {
+	            bibtexButton.innerHTML = 'Hide BibTeX <i class="fa-solid fa-angle-up"></i>';
+	        });
+
+	        bibtexContainer.addEventListener("hidden.bs.collapse", function () {
+	            bibtexButton.innerHTML = 'Show BibTeX <i class="fa-solid fa-angle-down"></i>';
+	        });
+	    });
+
+</script>
+
+<script src="../static/js/related-data.js"></script>
+<script src="../static/js/related.js"></script>
+<script defer src="../static/js/back-to-top.js"></script>
+
+</body>
+</html>

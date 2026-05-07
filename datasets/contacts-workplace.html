@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacts-workplace</title>
+    <meta name="description" content="This data set contains the temporal network of contacts between individuals measured in an office building in France, from June 24 to July 3, 2013. Nodes represent individuals. Original data are pairwise contacts; hyperedges are constructed by promoting cliques of contacts into higher-order group interactions.">
+    <meta property="og:title" content="contacts-workplace">
+    <meta property="og:description" content="This data set contains the temporal network of contacts between individuals measured in an office building in France, from June 24 to July 3, 2013. Nodes represent individuals. Original data are pairwise contacts; hyperedges are constructed by promoting cliques of contacts into higher-order group interactions.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../static/images/logo_cropped-removedbg.png">
+    <link rel="icon" type="image/png" href="../static/images/logo_cropped-removedbg.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css"> <!-- Link to your global stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Bootstrap Navbar (Header) with Burger Menu -->
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="../index.html">
+                <img src="../static/images/logo_cropped-removedbg-whitegraph.png" alt="HGX Logo" width="30" height="30" class="d-inline-block align-text-center">
+                Hypergraphx-data
+            </a>
+            
+            <!-- Burger Icon for Collapsing Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../statistics.html"><i class="fa-solid fa-database"></i> Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html"><i class="fa-solid fa-address-card"></i> About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-muted dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-link"></i> Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx/tree/main/tutorials" target="_blank" rel="noopener noreferrer">Tutorials <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/pszufe/HIF-standard" target="_blank" rel="noopener noreferrer">HIF <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://hypergraphx.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Docs <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main id="mainContent">
+    <div class="container mt-3">
+        <div class="text-center">
+            <img src="../static/images/logo.png" alt="Hypergraphx-data" class="page-logo">
+        </div>
+
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Datasets</a></li>
+                <li class="breadcrumb-item active" aria-current="page">contacts-workplace</li>
+            </ol>
+        </nav>
+
+        <h1 class="dataset-title">contacts-workplace</h1>
+        
+
+        <!-- Dataset Tags -->
+        <div class="mb-3 text-center dataset-tags">
+            <h4 style="display: inline;">Tags: </h4>
+            <span><a class="tag tag-link" href="../index.html?tags=Undirected" aria-label="Filter catalog by tag Undirected">Undirected</a> <a class="tag tag-link" href="../index.html?tags=Temporal" aria-label="Filter catalog by tag Temporal">Temporal</a> <a class="tag tag-link" href="../index.html?tags=Social" aria-label="Filter catalog by tag Social">Social</a></span> <!-- Tags will be replaced dynamically -->
+        </div>
+
+        <!-- Dataset Description -->
+        <div class="mb-3">
+            <h4><i class="fa-solid fa-circle-info section-title-icon"></i> Description</h4>
+            <p>This data set contains the temporal network of contacts between individuals measured in an office building in France, from June 24 to July 3, 2013. Nodes represent individuals. Original data are pairwise contacts; hyperedges are constructed by promoting cliques of contacts into higher-order group interactions.</p> <!-- Description will be replaced dynamically -->
+        </div>
+
+        <div class="dataset-mini-nav" aria-label="Jump to section">
+            <span class="mini-nav-label">Jump to</span>
+            <a href="#stats">Stats</a>
+            <a href="#downloads">Download</a>
+            <a href="#metadata">Metadata</a>
+            <a href="#related">Related</a>
+            <a href="#citation">Citation</a>
+        </div>
+
+        <!-- Dataset Statistics -->
+        <div class="mb-3" id="stats">
+            <h4><i class="fa-solid fa-chart-column section-title-icon"></i> Basic statistics</h4>
+            <ul>
+                <li><b>Nodes:</b> 92</li> <!-- Nodes will be replaced dynamically -->
+                <li><b>Hyperedges:</b> 9645</li> <!-- Hyperedges will be replaced dynamically -->
+                <li><b>Unique hyperedges:</b> 788</li>
+                <li><b>Max size hyperedge:</b> 4</li>
+            </ul>
+        </div>
+
+        <!-- Hypergraph Metadata -->
+        <div id="metadata"></div>
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Hypergraph metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>type</b></td><td>(STRING) Hypergraph type (e.g., TemporalHypergraph).</td></tr><tr><td><b>weighted</b></td><td>(BOOL) Whether the hypergraph is weighted (e.g., false).</td></tr></tbody></table></div>
+
+        <!-- Nodes Metadata -->
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Node metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>department</b></td><td>(STRING) Department code (e.g., DISQ, DMCT, DSE, SFLE, SRH).</td></tr><tr><td><b>id</b></td><td>(INT) Unique identifier for the employee (e.g., 35).</td></tr></tbody></table></div>
+
+        <!-- Edges Metadata -->
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Hyperedge metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>original_time</b></td><td>(INT) Original timestamp of the contact event (seconds from start) (e.g., 28820).</td></tr><tr><td><b>time</b></td><td>(INT) Normalized timestamp of the contact event (seconds from start) (e.g., 0).</td></tr></tbody></table></div>
+
+        <div class="chart-panel">
+            <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
+            <div class="chart-container chart-container-left">
+                <canvas id="edgeSizeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-panel" id="timeDistSection" style="display: none;">
+            <h4><i class="fa-solid fa-clock section-title-icon"></i> Hyperedge temporal distribution</h4>
+            <div class="chart-container chart-container-left">
+                <div class="chart-subtitle" id="timeSubtitle"></div>
+                <canvas id="timeDistributionChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-panel">
+            <h4><i class="fa-solid fa-chart-line section-title-icon"></i> Hyperdegree distribution</h4>
+            <div class="chart-container chart-container-left">
+                <canvas id="nodeDistributionChart"></canvas>
+            </div>
+        </div>
+      
+
+        <div class="mb-3" id="downloads">
+            <div class="mb-3">
+<h4><i class="fa-solid fa-download section-title-icon"></i> Download</h4>
+<ul class="versions-list">
+
+        <li>
+            <span class="version-label">Version 1.0</span>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/contacts-workplace/contacts-workplace.hgx.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(184.0 KB)</span>
+            </a>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/contacts-workplace/contacts-workplace.json.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(57.4 KB)</span>
+            </a>
+        </li>
+        </ul>
+</div>
+
+        </div>
+
+        <div id="related"></div>
+        <div class="mb-4" id="relatedDatasets" data-current-dataset="contacts-workplace" data-vertices="92" data-edges="9645">
+            <h4><i class="fa-solid fa-diagram-project section-title-icon"></i> Related datasets</h4>
+            <div class="related-datasets-list" id="relatedDatasetsList">
+                <div class="text-muted">Loading related datasets...</div>
+            </div>
+        </div>
+        
+
+        <!-- Provenance -->
+        <div class="mb-3" id="provenance">
+            <h4><i class="fa-solid fa-link section-title-icon"></i> Provenance</h4>
+            <p><strong>Source:</strong> <a href="http://www.sociopatterns.org/datasets/contacts-in-a-workplace/" target="_blank" rel="noopener noreferrer">http://www.sociopatterns.org/datasets/contacts-in-a-workplace/</a></p>
+<p><strong>License:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer"><span class="badge bg-success">CC0 Public Domain</span></a></p>
+<p><strong>Reproducibility:</strong> <a href="https://github.com/HGX-Team/hypergraphx-data/tree/main/reproducibility/contacts-workplace" target="_blank" rel="noopener noreferrer">Instructions and scripts</a></p>
+        </div>
+
+        <!-- BibTeX Display -->
+
+        <div class="mb-3" id="citation">
+            <h4><i class="fa-solid fa-quote-right section-title-icon"></i> Citation</h4>
+            <p>When this data is used in published research or for visualization purposes, please cite the following:</p>
+        
+            <button class="btn btn-sm btn-primary" style="background-color: #136c16; border-color: #19531b;" type="button" data-bs-toggle="collapse" data-bs-target="#bibtexContainer" aria-expanded="false" aria-controls="bibtexContainer">
+                Show BibTeX <i class="fa-solid fa-angle-down"></i>
+            </button>
+        
+            <div class="collapse mt-2" id="bibtexContainer">
+                <pre class="bibtex-container" id="bibtexContent">
+                    <button class="copy-button" onclick="copyBibTex()">Copy</button>
+                    <span class="copy-status" id="copyStatus">Copied!</span>
+                    @article{genois2015data,
+author = {GÉNOIS,MATHIEU and VESTERGAARD,CHRISTIAN L. and FOURNET,JULIE and PANISSON,ANDRÉ and BONMARIN,ISABELLE and BARRAT,ALAIN},
+title = {Data on face-to-face contacts in an office building suggest a low-cost vaccination strategy based on community linkers},
+journal = {Network Science},
+volume = {3},
+issue = {03},
+month = {9},
+year = {2015},
+issn = {2050-1250},
+pages = {326--347},
+numpages = {22},
+doi = {10.1017/nws.2015.10},
+URL = {http://journals.cambridge.org/article_S2050124215000107},
+}
+
+@article{lotito2023hypergraphx,
+    author = {Lotito, Quintino Francesco and Contisciani, Martina and De Bacco, Caterina and Di Gaetano, Leonardo and Gallo, Luca and Montresor, Alberto and Musciotto, Federico and Ruggeri, Nicolò and Battiston, Federico},
+    title = "{Hypergraphx: a library for higher-order network analysis}",
+    journal = {Journal of Complex Networks},
+    volume = {11},
+    number = {3},
+    year = {2023},
+    month = {05},
+    issn = {2051-1329},
+    doi = {10.1093/comnet/cnad019},
+    url = {https://doi.org/10.1093/comnet/cnad019},
+    note = {cnad019},
+    eprint = {https://academic.oup.com/comnet/article-pdf/11/3/cnad019/50461094/cnad019.pdf},
+}
+                </pre>
+            </div>
+        </div>
+
+        <!-- Back to Home Link -->
+        <div class="text-center mt-3">
+            <a href="../index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Data Repository</a> <!-- Button to go back to the main page -->
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+        <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+	    <footer class="footer-custom bg-dark text-white py-3">
+	        <div class="container text-center">
+	            <div>Hypergraphx-data: a repository of higher-order network datasets · © <span id="footerYear">2026</span></div>
+	        </div>
+	    </footer>
+    <script>
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for Copying BibTeX -->
+    <script>
+    function copyBibTex() {
+        const bibtexContentDiv = document.getElementById("bibtexContent");
+        if (!bibtexContentDiv) return;
+
+        // Extract only the text content, ignoring nested HTML and elements
+        const bibtexText = Array.from(bibtexContentDiv.childNodes)
+            .filter(node => node.nodeType === Node.TEXT_NODE)
+            .map(node => node.textContent.trim())
+            .join("\n");
+
+        const showCopied = () => {
+            const copyStatus = document.getElementById("copyStatus");
+            if (!copyStatus) return;
+            copyStatus.style.display = "inline";
+            setTimeout(() => {
+                copyStatus.style.display = "none";
+            }, 2000);
+        };
+
+        const fallbackCopy = () => {
+            const ta = document.createElement('textarea');
+            ta.value = bibtexText;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            ta.setSelectionRange(0, ta.value.length);
+            try {
+                document.execCommand('copy');
+                showCopied();
+            } finally {
+                ta.remove();
+            }
+        };
+
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            navigator.clipboard.writeText(bibtexText).then(showCopied).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
+        }
+    }
+
+    </script>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const hyperedgeBins = [2, 3, 4];
+const hyperedgeBinLabels = ["2", "3", "4"];
+const hyperedgeFrequencies = [9555, 88, 2];
+    const timeSeriesX = [617.5, 1852.5, 3087.5, 4322.5, 5557.5, 6792.5, 8027.5, 9262.5, 10497.5, 11732.5, 12967.5, 14202.5, 15437.5, 16672.5, 17907.5, 19142.5, 20377.5, 21612.5, 22847.5, 24082.5, 25317.5, 26552.5, 27787.5, 29022.5, 30257.5, 31492.5, 32727.5, 33962.5, 35197.5, 36432.5, 37667.5, 38902.5, 40137.5, 41372.5, 42607.5, 43842.5, 45077.5, 46312.5, 47547.5, 48782.5, 50017.5, 51252.5, 52487.5, 53722.5, 54957.5, 56192.5, 57427.5, 58662.5, 59897.5, 61132.5, 62367.5, 63602.5, 64837.5, 66072.5, 67307.5, 68542.5, 69777.5, 71012.5, 72247.5, 73482.5, 74717.5, 75952.5, 77187.5, 78422.5, 79657.5, 80892.5, 82127.5, 83362.5, 84597.5, 85832.5, 87067.5, 88302.5, 89537.5, 90772.5, 92007.5, 93242.5, 94477.5, 95712.5, 96947.5, 98182.5, 99417.5, 100652.5, 101887.5, 103122.5, 104357.5, 105592.5, 106827.5, 108062.5, 109297.5, 110532.5, 111767.5, 113002.5, 114237.5, 115472.5, 116707.5, 117942.5, 119177.5, 120412.5, 121647.5, 122882.5, 124117.5, 125352.5, 126587.5, 127822.5, 129057.5, 130292.5, 131527.5, 132762.5, 133997.5, 135232.5, 136467.5, 137702.5, 138937.5, 140172.5, 141407.5, 142642.5, 143877.5, 145112.5, 146347.5, 147582.5, 148817.5, 150052.5, 151287.5, 152522.5, 153757.5, 154992.5, 156227.5, 157462.5, 158697.5, 159932.5, 161167.5, 162402.5, 163637.5, 164872.5, 166107.5, 167342.5, 168577.5, 169812.5, 171047.5, 172282.5, 173517.5, 174752.5, 175987.5, 177222.5, 178457.5, 179692.5, 180927.5, 182162.5, 183397.5, 184632.5, 185867.5, 187102.5, 188337.5, 189572.5, 190807.5, 192042.5, 193277.5, 194512.5, 195747.5, 196982.5, 198217.5, 199452.5, 200687.5, 201922.5, 203157.5, 204392.5, 205627.5, 206862.5, 208097.5, 209332.5, 210567.5, 211802.5, 213037.5, 214272.5, 215507.5, 216742.5, 217977.5, 219212.5, 220447.5, 221682.5, 222917.5, 224152.5, 225387.5, 226622.5, 227857.5, 229092.5, 230327.5, 231562.5, 232797.5, 234032.5, 235267.5, 236502.5, 237737.5, 238972.5, 240207.5, 241442.5, 242677.5, 243912.5, 245147.5, 246382.5, 247617.5, 248852.5, 250087.5, 251322.5, 252557.5, 253792.5, 255027.5, 256262.5, 257497.5, 258732.5, 259967.5, 261202.5, 262437.5, 263672.5, 264907.5, 266142.5, 267377.5, 268612.5, 269847.5, 271082.5, 272317.5, 273552.5, 274787.5, 276022.5, 277257.5, 278492.5, 279727.5, 280962.5, 282197.5, 283432.5, 284667.5, 285902.5, 287137.5, 288372.5, 289607.5, 290842.5, 292077.5, 293312.5, 294547.5, 295782.5, 297017.5, 298252.5, 299487.5, 300722.5, 301957.5, 303192.5, 304427.5, 305662.5, 306897.5, 308132.5, 309367.5, 310602.5, 311837.5, 313072.5, 314307.5, 315542.5, 316777.5, 318012.5, 319247.5, 320482.5, 321717.5, 322952.5, 324187.5, 325422.5, 326657.5, 327892.5, 329127.5, 330362.5, 331597.5, 332832.5, 334067.5, 335302.5, 336537.5, 337772.5, 339007.5, 340242.5, 341477.5, 342712.5, 343947.5, 345182.5, 346417.5, 347652.5, 348887.5, 350122.5, 351357.5, 352592.5, 353827.5, 355062.5, 356297.5, 357532.5, 358767.5, 360002.5, 361237.5, 362472.5, 363707.5, 364942.5, 366177.5, 367412.5, 368647.5, 369882.5, 371117.5, 372352.5, 373587.5, 374822.5, 376057.5, 377292.5, 378527.5, 379762.5, 380997.5, 382232.5, 383467.5, 384702.5, 385937.5, 387172.5, 388407.5, 389642.5, 390877.5, 392112.5, 393347.5, 394582.5, 395817.5, 397052.5, 398287.5, 399522.5, 400757.5, 401992.5, 403227.5, 404462.5, 405697.5, 406932.5, 408167.5, 409402.5, 410637.5, 411872.5, 413107.5, 414342.5, 415577.5, 416812.5, 418047.5, 419282.5, 420517.5, 421752.5, 422987.5, 424222.5, 425457.5, 426692.5, 427927.5, 429162.5, 430397.5, 431632.5, 432867.5, 434102.5, 435337.5, 436572.5, 437807.5, 439042.5, 440277.5, 441512.5, 442747.5, 443982.5, 445217.5, 446452.5, 447687.5, 448922.5, 450157.5, 451392.5, 452627.5, 453862.5, 455097.5, 456332.5, 457567.5, 458802.5, 460037.5, 461272.5, 462507.5, 463742.5, 464977.5, 466212.5, 467447.5, 468682.5, 469917.5, 471152.5, 472387.5, 473622.5, 474857.5, 476092.5, 477327.5, 478562.5, 479797.5, 481032.5, 482267.5, 483502.5, 484737.5, 485972.5, 487207.5, 488442.5, 489677.5, 490912.5, 492147.5, 493382.5, 494617.5, 495852.5, 497087.5, 498322.5, 499557.5, 500792.5, 502027.5, 503262.5, 504497.5, 505732.5, 506967.5, 508202.5, 509437.5, 510672.5, 511907.5, 513142.5, 514377.5, 515612.5, 516847.5, 518082.5, 519317.5, 520552.5, 521787.5, 523022.5, 524257.5, 525492.5, 526727.5, 527962.5, 529197.5, 530432.5, 531667.5, 532902.5, 534137.5, 535372.5, 536607.5, 537842.5, 539077.5, 540312.5, 541547.5, 542782.5, 544017.5, 545252.5, 546487.5, 547722.5, 548957.5, 550192.5, 551427.5, 552662.5, 553897.5, 555132.5, 556367.5, 557602.5, 558837.5, 560072.5, 561307.5, 562542.5, 563777.5, 565012.5, 566247.5, 567482.5, 568717.5, 569952.5, 571187.5, 572422.5, 573657.5, 574892.5, 576127.5, 577362.5, 578597.5, 579832.5, 581067.5, 582302.5, 583537.5, 584772.5, 586007.5, 587242.5, 588477.5, 589712.5, 590947.5, 592182.5, 593417.5, 594652.5, 595887.5, 597122.5, 598357.5, 599592.5, 600827.5, 602062.5, 603297.5, 604532.5, 605767.5, 607002.5, 608237.5, 609472.5, 610707.5, 611942.5, 613177.5, 614412.5, 615647.5, 616882.5, 618117.5, 619352.5, 620587.5, 621822.5, 623057.5, 624292.5, 625527.5, 626762.5, 627997.5, 629232.5, 630467.5, 631702.5, 632937.5, 634172.5, 635407.5, 636642.5, 637877.5, 639112.5, 640347.5, 641582.5, 642817.5, 644052.5, 645287.5, 646522.5, 647757.5, 648992.5, 650227.5, 651462.5, 652697.5, 653932.5, 655167.5, 656402.5, 657637.5, 658872.5, 660107.5, 661342.5, 662577.5, 663812.5, 665047.5, 666282.5, 667517.5, 668752.5, 669987.5, 671222.5, 672457.5, 673692.5, 674927.5, 676162.5, 677397.5, 678632.5, 679867.5, 681102.5, 682337.5, 683572.5, 684807.5, 686042.5, 687277.5, 688512.5, 689747.5, 690982.5, 692217.5, 693452.5, 694687.5, 695922.5, 697157.5, 698392.5, 699627.5, 700862.5, 702097.5, 703332.5, 704567.5, 705802.5, 707037.5, 708272.5, 709507.5, 710742.5, 711977.5, 713212.5, 714447.5, 715682.5, 716917.5, 718152.5, 719387.5, 720622.5, 721857.5, 723092.5, 724327.5, 725562.5, 726797.5, 728032.5, 729267.5, 730502.5, 731737.5, 732972.5, 734207.5, 735442.5, 736677.5, 737912.5, 739147.5, 740382.5, 741617.5, 742852.5, 744087.5, 745322.5, 746557.5, 747792.5, 749027.5, 750262.5, 751497.5, 752732.5, 753967.5, 755202.5, 756437.5, 757672.5, 758907.5, 760142.5, 761377.5, 762612.5, 763847.5, 765082.5, 766317.5, 767552.5, 768787.5, 770022.5, 771257.5, 772492.5, 773727.5, 774962.5, 776197.5, 777432.5, 778667.5, 779902.5, 781137.5, 782372.5, 783607.5, 784842.5, 786077.5, 787312.5, 788547.5, 789782.5, 791017.5, 792252.5, 793487.5, 794722.5, 795957.5, 797192.5, 798427.5, 799662.5, 800897.5, 802132.5, 803367.5, 804602.5, 805837.5, 807072.5, 808307.5, 809542.5, 810777.5, 812012.5, 813247.5, 814482.5, 815717.5, 816952.5, 818187.5, 819422.5, 820657.5, 821892.5, 823127.5, 824362.5, 825597.5, 826832.5, 828067.5, 829302.5, 830537.5, 831772.5, 833007.5, 834242.5, 835477.5, 836712.5, 837947.5, 839182.5, 840417.5, 841652.5, 842887.5, 844122.5, 845357.5, 846592.5, 847827.5, 849062.5, 850297.5, 851532.5, 852767.5, 854002.5, 855237.5, 856472.5, 857707.5, 858942.5, 860177.5, 861412.5, 862647.5, 863882.5, 865117.5, 866352.5, 867587.5, 868822.5, 870057.5, 871292.5, 872527.5, 873762.5, 874997.5, 876232.5, 877467.5, 878702.5, 879937.5, 881172.5, 882407.5, 883642.5, 884877.5, 886112.5, 887347.5, 888582.5, 889817.5, 891052.5, 892287.5, 893522.5, 894757.5, 895992.5, 897227.5, 898462.5, 899697.5, 900932.5, 902167.5, 903402.5, 904637.5, 905872.5, 907107.5, 908342.5, 909577.5, 910812.5, 912047.5, 913282.5, 914517.5, 915752.5, 916987.5, 918222.5, 919457.5, 920692.5, 921927.5, 923162.5, 924397.5, 925632.5, 926867.5, 928102.5, 929337.5, 930572.5, 931807.5, 933042.5, 934277.5, 935512.5, 936747.5, 937982.5, 939217.5, 940452.5, 941687.5, 942922.5, 944157.5, 945392.5, 946627.5, 947862.5, 949097.5, 950332.5, 951567.5, 952802.5, 954037.5, 955272.5, 956507.5, 957742.5, 958977.5, 960212.5, 961447.5, 962682.5, 963917.5, 965152.5, 966387.5, 967622.5, 968857.5, 970092.5, 971327.5, 972562.5, 973797.5, 975032.5, 976267.5, 977502.5, 978737.5, 979972.5, 981207.5, 982442.5, 983677.5, 984912.5, 986147.5, 987382.5];
+const timeSeriesY = [6, 35, 24, 11, 51, 17, 18, 15, 8, 15, 28, 22, 111, 68, 29, 126, 53, 41, 70, 15, 41, 82, 39, 31, 18, 43, 11, 40, 35, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 14, 14, 18, 23, 90, 62, 25, 26, 68, 22, 3, 7, 8, 101, 107, 62, 11, 36, 35, 36, 4, 25, 64, 17, 28, 55, 40, 35, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 50, 12, 79, 29, 33, 40, 46, 52, 25, 5, 27, 24, 16, 33, 46, 42, 44, 27, 10, 3, 9, 52, 65, 7, 7, 9, 6, 9, 17, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 12, 12, 49, 56, 30, 66, 27, 9, 23, 22, 47, 19, 10, 34, 86, 49, 15, 29, 11, 14, 39, 45, 25, 33, 26, 53, 20, 5, 3, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 47, 49, 80, 42, 14, 19, 28, 46, 36, 57, 19, 23, 34, 5, 6, 3, 7, 9, 19, 38, 21, 20, 17, 4, 3, 1, 7, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 16, 21, 39, 32, 74, 61, 64, 42, 8, 15, 48, 11, 33, 33, 26, 23, 17, 49, 56, 32, 20, 50, 36, 69, 30, 41, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 24, 37, 73, 92, 96, 76, 60, 34, 71, 25, 10, 19, 50, 31, 32, 16, 15, 27, 20, 28, 50, 33, 40, 43, 29, 29, 17, 1, 11, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 32, 109, 69, 31, 80, 99, 18, 17, 8, 16, 30, 60, 65, 29, 42, 36, 12, 79, 32, 25, 1, 21, 20, 22, 17, 8, 34, 48, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 26, 48, 80, 47, 47, 41, 100, 72, 60, 50, 17, 36, 33, 80, 57, 63, 22, 42, 90, 77, 25, 3, 60, 16, 40, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 10, 23, 57, 63, 65, 54, 12, 57, 17, 25, 5, 29, 9, 6, 5, 26, 44, 25, 39, 53, 38, 12, 2, 4, 3, 7, 2];
+const timeSeriesStart = [0, 1235, 2470, 3705, 4940, 6175, 7410, 8645, 9880, 11115, 12350, 13585, 14820, 16055, 17290, 18525, 19760, 20995, 22230, 23465, 24700, 25935, 27170, 28405, 29640, 30875, 32110, 33345, 34580, 35815, 37050, 38285, 39520, 40755, 41990, 43225, 44460, 45695, 46930, 48165, 49400, 50635, 51870, 53105, 54340, 55575, 56810, 58045, 59280, 60515, 61750, 62985, 64220, 65455, 66690, 67925, 69160, 70395, 71630, 72865, 74100, 75335, 76570, 77805, 79040, 80275, 81510, 82745, 83980, 85215, 86450, 87685, 88920, 90155, 91390, 92625, 93860, 95095, 96330, 97565, 98800, 100035, 101270, 102505, 103740, 104975, 106210, 107445, 108680, 109915, 111150, 112385, 113620, 114855, 116090, 117325, 118560, 119795, 121030, 122265, 123500, 124735, 125970, 127205, 128440, 129675, 130910, 132145, 133380, 134615, 135850, 137085, 138320, 139555, 140790, 142025, 143260, 144495, 145730, 146965, 148200, 149435, 150670, 151905, 153140, 154375, 155610, 156845, 158080, 159315, 160550, 161785, 163020, 164255, 165490, 166725, 167960, 169195, 170430, 171665, 172900, 174135, 175370, 176605, 177840, 179075, 180310, 181545, 182780, 184015, 185250, 186485, 187720, 188955, 190190, 191425, 192660, 193895, 195130, 196365, 197600, 198835, 200070, 201305, 202540, 203775, 205010, 206245, 207480, 208715, 209950, 211185, 212420, 213655, 214890, 216125, 217360, 218595, 219830, 221065, 222300, 223535, 224770, 226005, 227240, 228475, 229710, 230945, 232180, 233415, 234650, 235885, 237120, 238355, 239590, 240825, 242060, 243295, 244530, 245765, 247000, 248235, 249470, 250705, 251940, 253175, 254410, 255645, 256880, 258115, 259350, 260585, 261820, 263055, 264290, 265525, 266760, 267995, 269230, 270465, 271700, 272935, 274170, 275405, 276640, 277875, 279110, 280345, 281580, 282815, 284050, 285285, 286520, 287755, 288990, 290225, 291460, 292695, 293930, 295165, 296400, 297635, 298870, 300105, 301340, 302575, 303810, 305045, 306280, 307515, 308750, 309985, 311220, 312455, 313690, 314925, 316160, 317395, 318630, 319865, 321100, 322335, 323570, 324805, 326040, 327275, 328510, 329745, 330980, 332215, 333450, 334685, 335920, 337155, 338390, 339625, 340860, 342095, 343330, 344565, 345800, 347035, 348270, 349505, 350740, 351975, 353210, 354445, 355680, 356915, 358150, 359385, 360620, 361855, 363090, 364325, 365560, 366795, 368030, 369265, 370500, 371735, 372970, 374205, 375440, 376675, 377910, 379145, 380380, 381615, 382850, 384085, 385320, 386555, 387790, 389025, 390260, 391495, 392730, 393965, 395200, 396435, 397670, 398905, 400140, 401375, 402610, 403845, 405080, 406315, 407550, 408785, 410020, 411255, 412490, 413725, 414960, 416195, 417430, 418665, 419900, 421135, 422370, 423605, 424840, 426075, 427310, 428545, 429780, 431015, 432250, 433485, 434720, 435955, 437190, 438425, 439660, 440895, 442130, 443365, 444600, 445835, 447070, 448305, 449540, 450775, 452010, 453245, 454480, 455715, 456950, 458185, 459420, 460655, 461890, 463125, 464360, 465595, 466830, 468065, 469300, 470535, 471770, 473005, 474240, 475475, 476710, 477945, 479180, 480415, 481650, 482885, 484120, 485355, 486590, 487825, 489060, 490295, 491530, 492765, 494000, 495235, 496470, 497705, 498940, 500175, 501410, 502645, 503880, 505115, 506350, 507585, 508820, 510055, 511290, 512525, 513760, 514995, 516230, 517465, 518700, 519935, 521170, 522405, 523640, 524875, 526110, 527345, 528580, 529815, 531050, 532285, 533520, 534755, 535990, 537225, 538460, 539695, 540930, 542165, 543400, 544635, 545870, 547105, 548340, 549575, 550810, 552045, 553280, 554515, 555750, 556985, 558220, 559455, 560690, 561925, 563160, 564395, 565630, 566865, 568100, 569335, 570570, 571805, 573040, 574275, 575510, 576745, 577980, 579215, 580450, 581685, 582920, 584155, 585390, 586625, 587860, 589095, 590330, 591565, 592800, 594035, 595270, 596505, 597740, 598975, 600210, 601445, 602680, 603915, 605150, 606385, 607620, 608855, 610090, 611325, 612560, 613795, 615030, 616265, 617500, 618735, 619970, 621205, 622440, 623675, 624910, 626145, 627380, 628615, 629850, 631085, 632320, 633555, 634790, 636025, 637260, 638495, 639730, 640965, 642200, 643435, 644670, 645905, 647140, 648375, 649610, 650845, 652080, 653315, 654550, 655785, 657020, 658255, 659490, 660725, 661960, 663195, 664430, 665665, 666900, 668135, 669370, 670605, 671840, 673075, 674310, 675545, 676780, 678015, 679250, 680485, 681720, 682955, 684190, 685425, 686660, 687895, 689130, 690365, 691600, 692835, 694070, 695305, 696540, 697775, 699010, 700245, 701480, 702715, 703950, 705185, 706420, 707655, 708890, 710125, 711360, 712595, 713830, 715065, 716300, 717535, 718770, 720005, 721240, 722475, 723710, 724945, 726180, 727415, 728650, 729885, 731120, 732355, 733590, 734825, 736060, 737295, 738530, 739765, 741000, 742235, 743470, 744705, 745940, 747175, 748410, 749645, 750880, 752115, 753350, 754585, 755820, 757055, 758290, 759525, 760760, 761995, 763230, 764465, 765700, 766935, 768170, 769405, 770640, 771875, 773110, 774345, 775580, 776815, 778050, 779285, 780520, 781755, 782990, 784225, 785460, 786695, 787930, 789165, 790400, 791635, 792870, 794105, 795340, 796575, 797810, 799045, 800280, 801515, 802750, 803985, 805220, 806455, 807690, 808925, 810160, 811395, 812630, 813865, 815100, 816335, 817570, 818805, 820040, 821275, 822510, 823745, 824980, 826215, 827450, 828685, 829920, 831155, 832390, 833625, 834860, 836095, 837330, 838565, 839800, 841035, 842270, 843505, 844740, 845975, 847210, 848445, 849680, 850915, 852150, 853385, 854620, 855855, 857090, 858325, 859560, 860795, 862030, 863265, 864500, 865735, 866970, 868205, 869440, 870675, 871910, 873145, 874380, 875615, 876850, 878085, 879320, 880555, 881790, 883025, 884260, 885495, 886730, 887965, 889200, 890435, 891670, 892905, 894140, 895375, 896610, 897845, 899080, 900315, 901550, 902785, 904020, 905255, 906490, 907725, 908960, 910195, 911430, 912665, 913900, 915135, 916370, 917605, 918840, 920075, 921310, 922545, 923780, 925015, 926250, 927485, 928720, 929955, 931190, 932425, 933660, 934895, 936130, 937365, 938600, 939835, 941070, 942305, 943540, 944775, 946010, 947245, 948480, 949715, 950950, 952185, 953420, 954655, 955890, 957125, 958360, 959595, 960830, 962065, 963300, 964535, 965770, 967005, 968240, 969475, 970710, 971945, 973180, 974415, 975650, 976885, 978120, 979355, 980590, 981825, 983060, 984295, 985530, 986765];
+const timeSeriesEnd = [1235, 2470, 3705, 4940, 6175, 7410, 8645, 9880, 11115, 12350, 13585, 14820, 16055, 17290, 18525, 19760, 20995, 22230, 23465, 24700, 25935, 27170, 28405, 29640, 30875, 32110, 33345, 34580, 35815, 37050, 38285, 39520, 40755, 41990, 43225, 44460, 45695, 46930, 48165, 49400, 50635, 51870, 53105, 54340, 55575, 56810, 58045, 59280, 60515, 61750, 62985, 64220, 65455, 66690, 67925, 69160, 70395, 71630, 72865, 74100, 75335, 76570, 77805, 79040, 80275, 81510, 82745, 83980, 85215, 86450, 87685, 88920, 90155, 91390, 92625, 93860, 95095, 96330, 97565, 98800, 100035, 101270, 102505, 103740, 104975, 106210, 107445, 108680, 109915, 111150, 112385, 113620, 114855, 116090, 117325, 118560, 119795, 121030, 122265, 123500, 124735, 125970, 127205, 128440, 129675, 130910, 132145, 133380, 134615, 135850, 137085, 138320, 139555, 140790, 142025, 143260, 144495, 145730, 146965, 148200, 149435, 150670, 151905, 153140, 154375, 155610, 156845, 158080, 159315, 160550, 161785, 163020, 164255, 165490, 166725, 167960, 169195, 170430, 171665, 172900, 174135, 175370, 176605, 177840, 179075, 180310, 181545, 182780, 184015, 185250, 186485, 187720, 188955, 190190, 191425, 192660, 193895, 195130, 196365, 197600, 198835, 200070, 201305, 202540, 203775, 205010, 206245, 207480, 208715, 209950, 211185, 212420, 213655, 214890, 216125, 217360, 218595, 219830, 221065, 222300, 223535, 224770, 226005, 227240, 228475, 229710, 230945, 232180, 233415, 234650, 235885, 237120, 238355, 239590, 240825, 242060, 243295, 244530, 245765, 247000, 248235, 249470, 250705, 251940, 253175, 254410, 255645, 256880, 258115, 259350, 260585, 261820, 263055, 264290, 265525, 266760, 267995, 269230, 270465, 271700, 272935, 274170, 275405, 276640, 277875, 279110, 280345, 281580, 282815, 284050, 285285, 286520, 287755, 288990, 290225, 291460, 292695, 293930, 295165, 296400, 297635, 298870, 300105, 301340, 302575, 303810, 305045, 306280, 307515, 308750, 309985, 311220, 312455, 313690, 314925, 316160, 317395, 318630, 319865, 321100, 322335, 323570, 324805, 326040, 327275, 328510, 329745, 330980, 332215, 333450, 334685, 335920, 337155, 338390, 339625, 340860, 342095, 343330, 344565, 345800, 347035, 348270, 349505, 350740, 351975, 353210, 354445, 355680, 356915, 358150, 359385, 360620, 361855, 363090, 364325, 365560, 366795, 368030, 369265, 370500, 371735, 372970, 374205, 375440, 376675, 377910, 379145, 380380, 381615, 382850, 384085, 385320, 386555, 387790, 389025, 390260, 391495, 392730, 393965, 395200, 396435, 397670, 398905, 400140, 401375, 402610, 403845, 405080, 406315, 407550, 408785, 410020, 411255, 412490, 413725, 414960, 416195, 417430, 418665, 419900, 421135, 422370, 423605, 424840, 426075, 427310, 428545, 429780, 431015, 432250, 433485, 434720, 435955, 437190, 438425, 439660, 440895, 442130, 443365, 444600, 445835, 447070, 448305, 449540, 450775, 452010, 453245, 454480, 455715, 456950, 458185, 459420, 460655, 461890, 463125, 464360, 465595, 466830, 468065, 469300, 470535, 471770, 473005, 474240, 475475, 476710, 477945, 479180, 480415, 481650, 482885, 484120, 485355, 486590, 487825, 489060, 490295, 491530, 492765, 494000, 495235, 496470, 497705, 498940, 500175, 501410, 502645, 503880, 505115, 506350, 507585, 508820, 510055, 511290, 512525, 513760, 514995, 516230, 517465, 518700, 519935, 521170, 522405, 523640, 524875, 526110, 527345, 528580, 529815, 531050, 532285, 533520, 534755, 535990, 537225, 538460, 539695, 540930, 542165, 543400, 544635, 545870, 547105, 548340, 549575, 550810, 552045, 553280, 554515, 555750, 556985, 558220, 559455, 560690, 561925, 563160, 564395, 565630, 566865, 568100, 569335, 570570, 571805, 573040, 574275, 575510, 576745, 577980, 579215, 580450, 581685, 582920, 584155, 585390, 586625, 587860, 589095, 590330, 591565, 592800, 594035, 595270, 596505, 597740, 598975, 600210, 601445, 602680, 603915, 605150, 606385, 607620, 608855, 610090, 611325, 612560, 613795, 615030, 616265, 617500, 618735, 619970, 621205, 622440, 623675, 624910, 626145, 627380, 628615, 629850, 631085, 632320, 633555, 634790, 636025, 637260, 638495, 639730, 640965, 642200, 643435, 644670, 645905, 647140, 648375, 649610, 650845, 652080, 653315, 654550, 655785, 657020, 658255, 659490, 660725, 661960, 663195, 664430, 665665, 666900, 668135, 669370, 670605, 671840, 673075, 674310, 675545, 676780, 678015, 679250, 680485, 681720, 682955, 684190, 685425, 686660, 687895, 689130, 690365, 691600, 692835, 694070, 695305, 696540, 697775, 699010, 700245, 701480, 702715, 703950, 705185, 706420, 707655, 708890, 710125, 711360, 712595, 713830, 715065, 716300, 717535, 718770, 720005, 721240, 722475, 723710, 724945, 726180, 727415, 728650, 729885, 731120, 732355, 733590, 734825, 736060, 737295, 738530, 739765, 741000, 742235, 743470, 744705, 745940, 747175, 748410, 749645, 750880, 752115, 753350, 754585, 755820, 757055, 758290, 759525, 760760, 761995, 763230, 764465, 765700, 766935, 768170, 769405, 770640, 771875, 773110, 774345, 775580, 776815, 778050, 779285, 780520, 781755, 782990, 784225, 785460, 786695, 787930, 789165, 790400, 791635, 792870, 794105, 795340, 796575, 797810, 799045, 800280, 801515, 802750, 803985, 805220, 806455, 807690, 808925, 810160, 811395, 812630, 813865, 815100, 816335, 817570, 818805, 820040, 821275, 822510, 823745, 824980, 826215, 827450, 828685, 829920, 831155, 832390, 833625, 834860, 836095, 837330, 838565, 839800, 841035, 842270, 843505, 844740, 845975, 847210, 848445, 849680, 850915, 852150, 853385, 854620, 855855, 857090, 858325, 859560, 860795, 862030, 863265, 864500, 865735, 866970, 868205, 869440, 870675, 871910, 873145, 874380, 875615, 876850, 878085, 879320, 880555, 881790, 883025, 884260, 885495, 886730, 887965, 889200, 890435, 891670, 892905, 894140, 895375, 896610, 897845, 899080, 900315, 901550, 902785, 904020, 905255, 906490, 907725, 908960, 910195, 911430, 912665, 913900, 915135, 916370, 917605, 918840, 920075, 921310, 922545, 923780, 925015, 926250, 927485, 928720, 929955, 931190, 932425, 933660, 934895, 936130, 937365, 938600, 939835, 941070, 942305, 943540, 944775, 946010, 947245, 948480, 949715, 950950, 952185, 953420, 954655, 955890, 957125, 958360, 959595, 960830, 962065, 963300, 964535, 965770, 967005, 968240, 969475, 970710, 971945, 973180, 974415, 975650, 976885, 978120, 979355, 980590, 981825, 983060, 984295, 985530, 986765, 988000];
+const timeIsEpoch = false;
+const timeBucketSeconds = 1235;
+const timeGranularity = "unit";
+    const degreeBins = [5, 7, 9, 16, 21, 27, 36, 48, 64, 85, 113, 150, 199, 264, 351, 465, 618, 820, 1089];
+const degreeBinLabels = ["5\u20136", "7\u20138", "9\u201311", "16\u201320", "21\u201326", "27\u201335", "36\u201347", "48\u201363", "64\u201384", "85\u2013112", "113\u2013149", "150\u2013198", "199\u2013263", "264\u2013350", "351\u2013464", "465\u2013617", "618\u2013819", "820\u20131088", "1089"];
+const degreeFrequencies = [1, 1, 1, 2, 2, 2, 1, 6, 7, 13, 8, 11, 10, 10, 11, 2, 2, 1, 1];
+    
+
+    // Plot Hyperedge Size Distribution
+    const ctx1 = document.getElementById('edgeSizeChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Hyperedge Size Distribution (Binned)',
+                data: hyperedgeBins.map((d, i) => ({ x: d, y: hyperedgeFrequencies[i] })),
+                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    title: { display: true, text: 'Hyperedge size bin (left edge)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        maxRotation: 0,
+                        padding: 6,
+                        callback: (val) => Number(val).toLocaleString()
+                    }
+                },
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    min: 1,
+                    title: { display: true, text: 'Count (log scale)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        padding: 6,
+                        callback: (val) => val.toLocaleString()
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => {
+                            const idx = items?.[0]?.dataIndex;
+                            if (typeof idx !== 'number') return '';
+                            if (typeof hyperedgeBinLabels !== 'undefined' && Array.isArray(hyperedgeBinLabels) && hyperedgeBinLabels[idx]) {
+                                return `Size bin: ${hyperedgeBinLabels[idx]}`;
+                            }
+                            return 'Hyperedge size bin';
+                        },
+                        label: (item) => {
+                            const y = item?.parsed?.y;
+                            const count = typeof y === 'number' ? y : Number(y);
+                            return `Count: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Plot Node Degree Distribution
+    const ctx2 = document.getElementById('nodeDistributionChart').getContext('2d');
+    new Chart(ctx2, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Hyperdegree Distribution (Binned)',
+                data: degreeBins.map((d, i) => ({ x: d, y: degreeFrequencies[i] })),
+                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    title: { display: true, text: 'Hyperdegree bin (left edge)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        maxRotation: 0,
+                        padding: 6,
+                        callback: (val) => Number(val).toLocaleString()
+                    }
+                },
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    // min y is 1
+                    min: 1,
+                    title: { display: true, text: 'Frequency (log scale)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        padding: 6,
+                        callback: (val) => val.toLocaleString()
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => {
+                            const idx = items?.[0]?.dataIndex;
+                            if (typeof idx !== 'number') return '';
+                            if (typeof degreeBinLabels !== 'undefined' && Array.isArray(degreeBinLabels) && degreeBinLabels[idx]) {
+                                return `Degree bin: ${degreeBinLabels[idx]}`;
+                            }
+                            return 'Hyperdegree bin';
+                        },
+                        label: (item) => {
+                            const y = item?.parsed?.y;
+                            const count = typeof y === 'number' ? y : Number(y);
+                            return `Frequency: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+        // Plot Hyperedge Temporal Distribution (if provided)
+    const timeSection = document.getElementById('timeDistSection');
+    function formatEpochSeconds(sec) {
+        const ms = sec * 1000;
+        const dt = new Date(ms);
+        const opts = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+        return new Intl.DateTimeFormat(undefined, opts).format(dt);
+    }
+
+    function formatRelativeSeconds(sec) {
+        if (sec >= 365 * 86400) {
+            const years = sec / (365 * 86400);
+            return `+${years.toFixed(years < 10 ? 1 : 0)}y`;
+        }
+        if (sec >= 30 * 86400) {
+            const months = sec / (30 * 86400);
+            return `+${months.toFixed(months < 10 ? 1 : 0)}mo`;
+        }
+        if (sec >= 86400) {
+            const days = sec / 86400;
+            return `+${days.toFixed(days < 10 ? 1 : 0)}d`;
+        }
+        if (sec >= 3600) {
+            const hours = sec / 3600;
+            return `+${hours.toFixed(hours < 10 ? 1 : 0)}h`;
+        }
+        if (sec >= 60) {
+            const mins = sec / 60;
+            return `+${mins.toFixed(mins < 10 ? 1 : 0)}m`;
+        }
+        return `+${sec.toFixed(sec < 10 ? 1 : 0)}s`;
+    }
+
+    function formatTimeValue(sec) {
+        if (typeof timeIsEpoch !== 'undefined' && timeIsEpoch) {
+            return formatEpochSeconds(sec);
+        }
+        return formatRelativeSeconds(sec);
+    }
+
+    function formatBucketSeconds(seconds) {
+        const s = Number(seconds);
+        if (!Number.isFinite(s) || s <= 0) return '';
+        if (s >= 365 * 86400) return `${Math.round(s / (365 * 86400))}y`;
+        if (s >= 30 * 86400) return `${Math.round(s / (30 * 86400))}mo`;
+        if (s >= 7 * 86400) return `${Math.round(s / (7 * 86400))}w`;
+        if (s >= 86400) return `${Math.round(s / 86400)}d`;
+        if (s >= 3600) return `${Math.round(s / 3600)}h`;
+        if (s >= 60) return `${Math.round(s / 60)}m`;
+        return `${Math.round(s)}s`;
+    }
+
+    if (typeof timeSeriesX !== 'undefined' && Array.isArray(timeSeriesX) && timeSeriesX.length) {
+        timeSection.style.display = 'block';
+        const ctx3 = document.getElementById('timeDistributionChart').getContext('2d');
+        const subtitle = document.getElementById('timeSubtitle');
+        if (subtitle) {
+            const bucketText = (typeof timeBucketSeconds === 'number' && timeBucketSeconds > 0)
+                ? ` · bucket ${formatBucketSeconds(timeBucketSeconds)}`
+                : '';
+            subtitle.textContent = (typeof timeIsEpoch !== 'undefined' && timeIsEpoch)
+                ? `UTC time (bucketed counts)${bucketText}`
+                : `Time since start (bucketed counts)${bucketText}`;
+        }
+
+        const fill = (() => {
+            const gradient = ctx3.createLinearGradient(0, 0, 0, ctx3.canvas.height || 300);
+            gradient.addColorStop(0, 'rgba(75, 192, 192, 0.22)');
+            gradient.addColorStop(1, 'rgba(75, 192, 192, 0.03)');
+            return gradient;
+        })();
+
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Hyperedge Temporal Distribution',
+                    data: timeSeriesX.map((t, i) => ({ x: t, y: timeSeriesY[i] })),
+                    backgroundColor: fill,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 5,
+                    stepped: true,
+                    tension: 0,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                normalized: true,
+                parsing: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        title: { display: true, text: 'Time' },
+                        grid: { display: false },
+                        ticks: {
+                            autoSkip: true,
+                            autoSkipPadding: 16,
+                            maxRotation: 0,
+                            padding: 6,
+                            callback: (val) => formatTimeValue(Number(val))
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        beginAtZero: true,
+                        title: { display: true, text: 'Count' },
+                        grid: { display: false },
+                        ticks: { padding: 6 }
+                    }
+                },
+                plugins: {
+                    decimation: { enabled: (Array.isArray(timeSeriesX) && timeSeriesX.length > 2000), algorithm: 'lttb', samples: 800 },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            title: (items) => {
+                                const idx = items?.[0]?.dataIndex;
+                                if (typeof idx !== 'number') return '';
+                                const start = Array.isArray(timeSeriesStart) ? timeSeriesStart[idx] : undefined;
+                                const end = Array.isArray(timeSeriesEnd) ? timeSeriesEnd[idx] : undefined;
+                                if (typeof start === 'number' && typeof end === 'number') {
+                                    return `${formatTimeValue(start)} – ${formatTimeValue(end)}`;
+                                }
+                                const t = Array.isArray(timeSeriesX) ? timeSeriesX[idx] : undefined;
+                                return (typeof t === 'number') ? formatTimeValue(t) : 'Time';
+                            },
+                            label: (item) => {
+                                const y = item?.parsed?.y;
+                                const count = typeof y === 'number' ? y : Number(y);
+                                return `Count: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+
+	    document.addEventListener("DOMContentLoaded", function () {
+	        const bibtexButton = document.querySelector('[data-bs-target="#bibtexContainer"]');
+	        const bibtexContainer = document.getElementById("bibtexContainer");
+
+	        bibtexContainer.addEventListener("shown.bs.collapse", function () {
+	            bibtexButton.innerHTML = 'Hide BibTeX <i class="fa-solid fa-angle-up"></i>';
+	        });
+
+	        bibtexContainer.addEventListener("hidden.bs.collapse", function () {
+	            bibtexButton.innerHTML = 'Show BibTeX <i class="fa-solid fa-angle-down"></i>';
+	        });
+	    });
+
+</script>
+
+<script src="../static/js/related-data.js"></script>
+<script src="../static/js/related.js"></script>
+<script defer src="../static/js/back-to-top.js"></script>
+
+</body>
+</html>

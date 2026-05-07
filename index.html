@@ -1,1 +1,1503 @@
-Under maintenance
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypergraphx-data</title>
+    <meta name="description" content="A curated catalog of higher-order network (hypergraph) datasets with metadata, download links, and reproducibility resources.">
+    <meta property="og:title" content="Hypergraphx-data">
+    <meta property="og:description" content="A curated catalog of higher-order network (hypergraph) datasets with metadata, download links, and reproducibility resources.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="static/images/logo_cropped-removedbg.png">
+    <link rel="icon" type="image/png" href="static/images/logo_cropped-removedbg.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Code highlight -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <style>
+    /* Ensure the highlighter doesn't overwrite your dark container */
+    .hljs { background: transparent !important; color: inherit; }
+    /* Optional: make inline code match too */
+    pre code.hljs, pre.hljs { background: transparent !important; }
+    </style>
+</head>
+<body>
+    <!-- Bootstrap Navbar (Header) with Burger Menu -->
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/logo_cropped-removedbg-whitegraph.png" alt="HGX Logo" width="30" height="30" class="d-inline-block align-text-center">
+                Hypergraphx-data
+            </a>
+            
+            <!-- Burger Icon for Collapsing Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistics.html"><i class="fa-solid fa-database"></i> Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-muted dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-link"></i> Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx/tree/main/tutorials" target="_blank" rel="noopener noreferrer">Tutorials <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/pszufe/HIF-standard" target="_blank" rel="noopener noreferrer">HIF <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://hypergraphx.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Docs <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main id="mainContent">
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="hero-kicker">Hypergraphx-data</span>
+                    <h1 class="hero-title">A curated catalog of higher-order network datasets.</h1>
+                    <p class="hero-subtitle">
+                        Explore hypergraph datasets with clear metadata, consistent formats, and ready-to-use downloads.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-dark" href="#catalog"><i class="fa-solid fa-table-list" aria-hidden="true"></i> Browse datasets</a>
+                        <a class="btn btn-outline-secondary" href="#snippets"><i class="fa-solid fa-code" aria-hidden="true"></i> Snippets</a>
+                        <a class="btn btn-outline-secondary" href="https://github.com/HGX-Team/hypergraphx/tree/main/tutorials" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Notebook tutorial</a>
+                        <a class="btn btn-outline-secondary" href="https://doi.org/10.1093/comnet/cnad019" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Read the paper</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="hero-logo">
+                        <img src="static/images/logo.png" alt="Hypergraphx-data logo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recently-added" class="recently-added-section">
+        <div class="container">
+            <div class="recently-added my-4">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+                    <h3 class="mb-0">Recently added or updated</h3>
+                    <span class="text-muted small">Curated highlights from the latest dataset changes.</span>
+                </div>
+                
+    <div class="recently-added-grid horizontal-card-row">
+        
+        <div class="recently-added-card">
+            <div class="recently-added-title">
+                <a href="datasets/pokemon-moves-version-group-multiplex.html">pokemon-moves-version-group-multiplex</a>
+                <span class="badge bg-success ms-2">New</span>
+            </div>
+            <div class="recently-added-tags"><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span></div>
+        </div>
+        
+        <div class="recently-added-card">
+            <div class="recently-added-title">
+                <a href="datasets/pokemon-moves-learn-method-multiplex.html">pokemon-moves-learn-method-multiplex</a>
+                <span class="badge bg-success ms-2">New</span>
+            </div>
+            <div class="recently-added-tags"><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span></div>
+        </div>
+        
+        <div class="recently-added-card">
+            <div class="recently-added-title">
+                <a href="datasets/pokemon-moves-learn-method-full-multiplex.html">pokemon-moves-learn-method-full-multiplex</a>
+                <span class="badge bg-success ms-2">New</span>
+            </div>
+            <div class="recently-added-tags"><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span></div>
+        </div>
+        
+        <div class="recently-added-card">
+            <div class="recently-added-title">
+                <a href="datasets/pokemon-moves-dual.html">pokemon-moves-dual</a>
+                <span class="badge bg-success ms-2">New</span>
+            </div>
+            <div class="recently-added-tags"><span class="tag">Undirected</span> <span class="tag">Biology</span> <span class="tag">Games</span></div>
+        </div>
+        
+        <div class="recently-added-card">
+            <div class="recently-added-title">
+                <a href="datasets/pokemon-moves.html">pokemon-moves</a>
+                <span class="badge bg-success ms-2">New</span>
+            </div>
+            <div class="recently-added-tags"><span class="tag">Undirected</span> <span class="tag">Biology</span> <span class="tag">Games</span></div>
+        </div>
+        
+    </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="easy-access" class="recently-added-section">
+        <div class="container">
+            <div class="recently-added my-4">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+                    <h3 class="mb-0">Easy access</h3>
+                    <div class="easy-access-meta">
+                        <span class="text-muted small">5 random datasets grouped by size (based on <strong>E</strong> in the catalog).</span>
+                        <span class="easy-access-legend" aria-label="Size legend">
+                            <span><span class="badge bg-secondary">S</span> small</span>
+                            <span><span class="badge bg-primary">M</span> medium</span>
+                            <span><span class="badge bg-dark">L</span> large</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="recently-added-grid horizontal-card-row" id="easyAccessRow"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="row g-4">
+	                <aside class="col-lg-3 catalog-sidebar">
+	                    <div class="sticky-panel">
+	                        <div class="filters-header">
+	                            <h2 class="section-title">Filters</h2>
+	                            <span class="filter-count" id="filterCount" aria-live="polite">0 active</span>
+	                        </div>
+			                        <div class="filter-section text-center">
+			                            <div class="filter-group">
+			                                <label class="filter-label" for="searchInput">Search</label>
+			                                <input type="search" id="searchInput" class="form-control form-control-sm"
+			                                    placeholder="Search datasets or tags"
+			                                    autocomplete="off"
+			                                    list="datasetSuggestions"
+			                                    aria-label="Search datasets or tags">
+			                                <datalist id="datasetSuggestions"></datalist>
+			                            </div>
+			                            <div class="filter-group">
+			                                <div class="filter-label">Tag matching</div>
+			                                <div class="form-check form-switch">
+			                                    <input class="form-check-input" type="checkbox" role="switch" id="tagMatchMode">
+			                                    <label class="form-check-label" for="tagMatchMode" id="tagMatchModeLabel">Within group: AND</label>
+		                                </div>
+		                                <div class="text-muted small">Across groups is always AND.</div>
+		                            </div>
+		                            <div class="filter-group">
+		                                <div class="filter-label">Network Type</div>
+		                                <div class="filter-row">
+		                                    <button class="tag" data-tag="Directed" data-group="type" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-arrow-right"></i></span>Directed</button>
+		                                    <button class="tag" data-tag="Weighted" data-group="type" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-hashtag"></i></span>Weighted</button>
+		                                    <button class="tag" data-tag="Temporal" data-group="type" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-clock"></i></span>Temporal</button>
+		                                    <button class="tag" data-tag="Multiplex" data-group="type" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-layer-group"></i></span>Multiplex</button>
+		                                    <button class="tag" data-tag="Node attributed" data-group="type" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-tags"></i></span>Node attributed</button>
+		                                    <button class="tag" data-tag="Edge attributed" data-group="type" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-tag"></i></span>Edge attributed</button>
+		                                </div>
+		                            </div>
+
+		                            <div class="filter-group">
+		                                <div class="filter-label">Domain</div>
+		                                <div class="filter-row">
+		                                    <button class="tag" data-tag="Biology" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-dna"></i></span>Biology</button>
+		                                    <button class="tag" data-tag="Social" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-users"></i></span>Social</button>
+		                                    <button class="tag" data-tag="Authorship" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-pen-nib"></i></span>Authorship</button>
+		                                    <button class="tag" data-tag="Technology" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-microchip"></i></span>Technology</button>
+		                                    <button class="tag" data-tag="Finance" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-coins"></i></span>Finance</button>
+		                                    <button class="tag" data-tag="Food" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-utensils"></i></span>Food</button>
+		                                    <button class="tag tag-span" data-tag="Other" data-group="domain" aria-pressed="false"><span class="tag-icon"><i class="fa-solid fa-ellipsis"></i></span>Other</button>
+		                                </div>
+		                            </div>
+
+			                            <div class="filter-group">
+			                                <div class="filter-label">Size</div>
+			                                <div class="size-hint text-muted small">Drag sliders to set min/max ranges.</div>
+			                                <div class="size-grid mb-3">
+		                                    <div class="size-control">
+		                                        <label for="minNodes">Nodes from</label>
+		                                        <input type="range" id="minNodes" min="0" max="0" step="1" class="form-range">
+		                                        <span id="minNodesLabel" class="highlight-label">0</span>
+		                                    </div>
+		                                    <div class="size-control">
+		                                        <label for="maxNodes">Nodes to</label>
+		                                        <input type="range" id="maxNodes" min="0" max="0" step="1" class="form-range">
+		                                        <span id="maxNodesLabel" class="highlight-label">0</span>
+		                                    </div>
+			                                    <div class="size-control">
+			                                        <label class="size-control-label--small" for="minEdges">Hyperedges from</label>
+			                                        <input type="range" id="minEdges" min="0" max="0" step="1" class="form-range">
+			                                        <span id="minEdgesLabel" class="highlight-label">0</span>
+			                                    </div>
+			                                    <div class="size-control">
+			                                        <label class="size-control-label--small" for="maxEdges">Hyperedges to</label>
+			                                        <input type="range" id="maxEdges" min="0" max="0" step="1" class="form-range">
+			                                        <span id="maxEdgesLabel" class="highlight-label">0</span>
+				                                    </div>
+				                                </div>
+				                            </div>
+				                            <div class="filter-group">
+				                                <div class="filter-label"><i class="fa-solid fa-scale-balanced me-1"></i>License</div>
+				                                <div class="filter-row" id="licenseFilters"></div>
+				                            </div>
+	                            <button class="filter-clear-link" id="clearFiltersBtn" type="button">
+	                                <i class="fa-solid fa-rotate-left"></i>Clear filters
+	                            </button>
+	                        </div>
+
+                    </div>
+                </aside>
+
+                <div class="col-lg-9 catalog-main">
+                    <div class="catalog-panel">
+	                        <div class="meta-strip">
+	                            <div class="meta-item">
+	                                <div class="meta-label">Total datasets</div>
+	                                <div class="meta-value" id="metaTotal" aria-live="polite">0</div>
+	                            </div>
+	                            <div class="meta-item">
+	                                <div class="meta-label">Showing</div>
+	                                <div class="meta-value" id="metaShown" aria-live="polite">0</div>
+	                            </div>
+	                            <div class="meta-item">
+	                                <div class="meta-label">Last updated</div>
+	                                <div class="meta-value" id="metaUpdated" aria-live="polite">--</div>
+	                            </div>
+	                            <div class="filter-summary" id="filterSummary">
+	                                <span class="filter-chip">All datasets</span>
+	                            </div>
+	                        </div>
+
+                        <h2 class="text-center mt-4">Datasets</h2>
+                        <div class="table-legend text-muted small text-center">
+                            <span><strong>V</strong> = vertices (nodes)</span>
+                            <span class="legend-dot">·</span>
+                            <span><strong>E</strong> = hyperedges</span>
+                            <span class="legend-dot">·</span>
+                            <span><strong>E<sub>unique</sub></strong> = unique hyperedges</span>
+                        </div>
+
+	                        <div id="datasetTableWrap">
+	                            <table class="table" id="datasetsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Dataset Name</th>
+                                        <th>Tags</th>
+	                                        <th>V</th>
+	                                        <th>E</th>
+	                                        <th>E<sub>unique</sub></th>
+	                                    </tr>
+	                                </thead>
+                                <tbody>
+                                    
+    <tr data-tags="Undirected" data-license="MIT" data-name="20newsW100" data-search="20newsW100 Undirected">
+        <td><a href="datasets/20newsW100.html">20newsW100</a></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>16242</td>
+        <td>100</td>
+        <td>100</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Weighted, Biology" data-license="" data-name="DAWN" data-search="DAWN Undirected Temporal Weighted Biology">
+        <td><a href="datasets/DAWN.html">DAWN</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Weighted</span> <span class="tag">Biology</span></td>
+        <td>2558</td>
+        <td>2272433</td>
+        <td>141087</td>
+    </tr>
+    
+
+    <tr data-tags="Biology, Undirected" data-license="" data-name="ECO-M_PL_015_plants" data-search="ECO-M_PL_015_plants Biology Undirected">
+        <td><a href="datasets/ECO-M_PL_015_plants.html">ECO-M_PL_015_plants</a></td>
+        <td><span class="tag">Biology</span> <span class="tag">Undirected</span></td>
+        <td>131</td>
+        <td>477</td>
+        <td>477</td>
+    </tr>
+    
+
+    <tr data-tags="Biology, Undirected" data-license="" data-name="ECO-M_PL_015_pollinators" data-search="ECO-M_PL_015_pollinators Biology Undirected">
+        <td><a href="datasets/ECO-M_PL_015_pollinators.html">ECO-M_PL_015_pollinators</a></td>
+        <td><span class="tag">Biology</span> <span class="tag">Undirected</span></td>
+        <td>666</td>
+        <td>129</td>
+        <td>129</td>
+    </tr>
+    
+
+    <tr data-tags="Biology, Undirected" data-license="" data-name="ECO-M_PL_062_plants" data-search="ECO-M_PL_062_plants Biology Undirected">
+        <td><a href="datasets/ECO-M_PL_062_plants.html">ECO-M_PL_062_plants</a></td>
+        <td><span class="tag">Biology</span> <span class="tag">Undirected</span></td>
+        <td>456</td>
+        <td>1008</td>
+        <td>1008</td>
+    </tr>
+    
+
+    <tr data-tags="Biology, Undirected" data-license="" data-name="ECO-M_PL_062_pollinators" data-search="ECO-M_PL_062_pollinators Biology Undirected">
+        <td><a href="datasets/ECO-M_PL_062_pollinators.html">ECO-M_PL_062_pollinators</a></td>
+        <td><span class="tag">Biology</span> <span class="tag">Undirected</span></td>
+        <td>1044</td>
+        <td>456</td>
+        <td>456</td>
+    </tr>
+    
+
+    <tr data-tags="Social, Undirected, Temporal" data-license="" data-name="Elem1" data-search="Elem1 Social Undirected Temporal">
+        <td><a href="datasets/Elem1.html">Elem1</a></td>
+        <td><span class="tag">Social</span> <span class="tag">Undirected</span> <span class="tag">Temporal</span></td>
+        <td>339</td>
+        <td>226323</td>
+        <td>26543</td>
+    </tr>
+    
+
+    <tr data-tags="Social, Undirected, Temporal" data-license="" data-name="Mid1" data-search="Mid1 Social Undirected Temporal">
+        <td><a href="datasets/Mid1.html">Mid1</a></td>
+        <td><span class="tag">Social</span> <span class="tag">Undirected</span> <span class="tag">Temporal</span></td>
+        <td>591</td>
+        <td>518191</td>
+        <td>76062</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected" data-license="MIT" data-name="ModelNet40" data-search="ModelNet40 Undirected">
+        <td><a href="datasets/ModelNet40.html">ModelNet40</a></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>12311</td>
+        <td>11638</td>
+        <td>11638</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Node attributed, Biology" data-license="MIT" data-name="Mushroom" data-search="Mushroom Undirected Node attributed Biology">
+        <td><a href="datasets/Mushroom.html">Mushroom</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Node attributed</span> <span class="tag">Biology</span></td>
+        <td>8124</td>
+        <td>272</td>
+        <td>272</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Weighted, Biology" data-license="" data-name="NDC-classes" data-search="NDC-classes Undirected Temporal Weighted Biology">
+        <td><a href="datasets/NDC-classes.html">NDC-classes</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Weighted</span> <span class="tag">Biology</span></td>
+        <td>1161</td>
+        <td>49726</td>
+        <td>1090</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Weighted, Biology" data-license="" data-name="NDC-substances" data-search="NDC-substances Undirected Temporal Weighted Biology">
+        <td><a href="datasets/NDC-substances.html">NDC-substances</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Weighted</span> <span class="tag">Biology</span></td>
+        <td>5556</td>
+        <td>112919</td>
+        <td>10273</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected" data-license="MIT" data-name="NTU2012" data-search="NTU2012 Undirected">
+        <td><a href="datasets/NTU2012.html">NTU2012</a></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>2012</td>
+        <td>1635</td>
+        <td>1635</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Consumer behaviour" data-license="" data-name="amazon-reviews" data-search="amazon-reviews Undirected Consumer behaviour">
+        <td><a href="datasets/amazon-reviews.html">amazon-reviews</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Consumer behaviour</span></td>
+        <td>2268231</td>
+        <td>4242421</td>
+        <td>4242421</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Biology" data-license="" data-name="cat-edge-Brain" data-search="cat-edge-Brain Undirected Edge attributed Biology">
+        <td><a href="datasets/cat-edge-Brain.html">cat-edge-Brain</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Biology</span></td>
+        <td>638</td>
+        <td>29215</td>
+        <td>29215</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Food" data-license="" data-name="cat-edge-Cooking" data-search="cat-edge-Cooking Undirected Edge attributed Food">
+        <td><a href="datasets/cat-edge-Cooking.html">cat-edge-Cooking</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Food</span></td>
+        <td>6714</td>
+        <td>39243</td>
+        <td>39243</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Biology" data-license="" data-name="cat-edge-DAWN" data-search="cat-edge-DAWN Undirected Edge attributed Biology">
+        <td><a href="datasets/cat-edge-DAWN.html">cat-edge-DAWN</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Biology</span></td>
+        <td>2109</td>
+        <td>87104</td>
+        <td>87104</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Authorship" data-license="" data-name="cat-edge-MAG-10" data-search="cat-edge-MAG-10 Undirected Edge attributed Authorship">
+        <td><a href="datasets/cat-edge-MAG-10.html">cat-edge-MAG-10</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Authorship</span></td>
+        <td>80198</td>
+        <td>51889</td>
+        <td>51889</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Discussion forum" data-license="" data-name="cat-edge-algebra-questions" data-search="cat-edge-algebra-questions Undirected Edge attributed Discussion forum">
+        <td><a href="datasets/cat-edge-algebra-questions.html">cat-edge-algebra-questions</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Discussion forum</span></td>
+        <td>423</td>
+        <td>980</td>
+        <td>980</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Discussion forum" data-license="" data-name="cat-edge-geometry-questions" data-search="cat-edge-geometry-questions Undirected Edge attributed Discussion forum">
+        <td><a href="datasets/cat-edge-geometry-questions.html">cat-edge-geometry-questions</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Discussion forum</span></td>
+        <td>580</td>
+        <td>888</td>
+        <td>888</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Consumer behaviour" data-license="" data-name="cat-edge-madison-restaurant-reviews" data-search="cat-edge-madison-restaurant-reviews Undirected Edge attributed Consumer behaviour">
+        <td><a href="datasets/cat-edge-madison-restaurant-reviews.html">cat-edge-madison-restaurant-reviews</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Consumer behaviour</span></td>
+        <td>565</td>
+        <td>594</td>
+        <td>594</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Consumer behaviour" data-license="" data-name="cat-edge-music-blues-reviews" data-search="cat-edge-music-blues-reviews Undirected Edge attributed Consumer behaviour">
+        <td><a href="datasets/cat-edge-music-blues-reviews.html">cat-edge-music-blues-reviews</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Consumer behaviour</span></td>
+        <td>1106</td>
+        <td>686</td>
+        <td>686</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Consumer behaviour" data-license="" data-name="cat-edge-vegas-bars-reviews" data-search="cat-edge-vegas-bars-reviews Undirected Edge attributed Consumer behaviour">
+        <td><a href="datasets/cat-edge-vegas-bars-reviews.html">cat-edge-vegas-bars-reviews</a> <span class="badge bg-warning text-dark ms-2" aria-label="Recently updated dataset">Updated</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Consumer behaviour</span></td>
+        <td>1234</td>
+        <td>1188</td>
+        <td>1188</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social, Authorship" data-license="" data-name="coauth-DBLP" data-search="coauth-DBLP Undirected Temporal Social Authorship">
+        <td><a href="datasets/coauth-DBLP.html">coauth-DBLP</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>1930378</td>
+        <td>3700681</td>
+        <td>2467396</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-0" data-search="coauth-PACS-0 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-0.html">coauth-PACS-0</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>98478</td>
+        <td>61637</td>
+        <td>61637</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-1" data-search="coauth-PACS-1 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-1.html">coauth-PACS-1</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>68165</td>
+        <td>36761</td>
+        <td>36761</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-2" data-search="coauth-PACS-2 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-2.html">coauth-PACS-2</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>55549</td>
+        <td>28213</td>
+        <td>28213</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-3" data-search="coauth-PACS-3 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-3.html">coauth-PACS-3</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>43501</td>
+        <td>20392</td>
+        <td>20392</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-4" data-search="coauth-PACS-4 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-4.html">coauth-PACS-4</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>71422</td>
+        <td>49894</td>
+        <td>49894</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-5" data-search="coauth-PACS-5 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-5.html">coauth-PACS-5</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>17993</td>
+        <td>6164</td>
+        <td>6164</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-6" data-search="coauth-PACS-6 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-6.html">coauth-PACS-6</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>93319</td>
+        <td>52643</td>
+        <td>52643</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-7" data-search="coauth-PACS-7 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-7.html">coauth-PACS-7</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>128464</td>
+        <td>80577</td>
+        <td>80577</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-8" data-search="coauth-PACS-8 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-8.html">coauth-PACS-8</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>78406</td>
+        <td>33455</td>
+        <td>33455</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="Custom" data-name="coauth-PACS-9" data-search="coauth-PACS-9 Undirected Social Authorship">
+        <td><a href="datasets/coauth-PACS-9.html">coauth-PACS-9</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>60843</td>
+        <td>18309</td>
+        <td>18309</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Social, Authorship" data-license="Custom" data-name="coauth-PACS-multiplex" data-search="coauth-PACS-multiplex Multiplex Social Authorship">
+        <td><a href="datasets/coauth-PACS-multiplex.html">coauth-PACS-multiplex</a></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>319640</td>
+        <td>388045</td>
+        <td>249393</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-CVPR" data-search="coauth-cs-CVPR Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-CVPR.html">coauth-cs-CVPR</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>18835</td>
+        <td>11006</td>
+        <td>11006</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-FOCS" data-search="coauth-cs-FOCS Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-FOCS.html">coauth-cs-FOCS</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>3758</td>
+        <td>2487</td>
+        <td>2487</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-ICCV" data-search="coauth-cs-ICCV Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-ICCV.html">coauth-cs-ICCV</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>11691</td>
+        <td>5366</td>
+        <td>5366</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-ICML" data-search="coauth-cs-ICML Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-ICML.html">coauth-cs-ICML</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>9981</td>
+        <td>4803</td>
+        <td>4803</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-KDD" data-search="coauth-cs-KDD Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-KDD.html">coauth-cs-KDD</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>10883</td>
+        <td>4675</td>
+        <td>4675</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-NeurIPS" data-search="coauth-cs-NeurIPS Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-NeurIPS.html">coauth-cs-NeurIPS</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>12306</td>
+        <td>7060</td>
+        <td>7060</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-SIGMOD" data-search="coauth-cs-SIGMOD Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-SIGMOD.html">coauth-cs-SIGMOD</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>8755</td>
+        <td>4291</td>
+        <td>4291</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-STOC" data-search="coauth-cs-STOC Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-STOC.html">coauth-cs-STOC</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>2862</td>
+        <td>2284</td>
+        <td>2284</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-VLDB" data-search="coauth-cs-VLDB Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-VLDB.html">coauth-cs-VLDB</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>8839</td>
+        <td>4448</td>
+        <td>4448</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social, Authorship" data-license="" data-name="coauth-cs-WWW" data-search="coauth-cs-WWW Undirected Social Authorship">
+        <td><a href="datasets/coauth-cs-WWW.html">coauth-cs-WWW</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>12889</td>
+        <td>5468</td>
+        <td>5468</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Multiplex, Social, Authorship" data-license="" data-name="coauth-cs-multiplex" data-search="coauth-cs-multiplex Undirected Multiplex Social Authorship">
+        <td><a href="datasets/coauth-cs-multiplex.html">coauth-cs-multiplex</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Multiplex</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>80198</td>
+        <td>51888</td>
+        <td>51888</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social, Authorship" data-license="" data-name="coauth-geology" data-search="coauth-geology Undirected Temporal Social Authorship">
+        <td><a href="datasets/coauth-geology.html">coauth-geology</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>1261129</td>
+        <td>1591166</td>
+        <td>1204704</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social, Authorship" data-license="" data-name="coauth-history" data-search="coauth-history Undirected Temporal Social Authorship">
+        <td><a href="datasets/coauth-history.html">coauth-history</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span> <span class="tag">Authorship</span></td>
+        <td>1034876</td>
+        <td>1813147</td>
+        <td>896062</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="" data-name="congress-bills" data-search="congress-bills Undirected Temporal Social">
+        <td><a href="datasets/congress-bills.html">congress-bills</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>1718</td>
+        <td>282049</td>
+        <td>105733</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC-BY-NC-SA-3.0" data-name="contacts-conference-hypertext" data-search="contacts-conference-hypertext Undirected Temporal Social">
+        <td><a href="datasets/contacts-conference-hypertext.html">contacts-conference-hypertext</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>113</td>
+        <td>19037</td>
+        <td>2434</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC0-1.0" data-name="contacts-conference-sfhh" data-search="contacts-conference-sfhh Undirected Temporal Social">
+        <td><a href="datasets/contacts-conference-sfhh.html">contacts-conference-sfhh</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>403</td>
+        <td>54306</td>
+        <td>10541</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC-BY-NC-SA-3.0" data-name="contacts-high-school" data-search="contacts-high-school Undirected Temporal Social">
+        <td><a href="datasets/contacts-high-school.html">contacts-high-school</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>327</td>
+        <td>172035</td>
+        <td>7818</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC-BY-NC-SA-3.0" data-name="contacts-hospital" data-search="contacts-hospital Undirected Temporal Social">
+        <td><a href="datasets/contacts-hospital.html">contacts-hospital</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>75</td>
+        <td>27835</td>
+        <td>1825</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC-BY-NC-SA-3.0" data-name="contacts-primary-school" data-search="contacts-primary-school Undirected Temporal Social">
+        <td><a href="datasets/contacts-primary-school.html">contacts-primary-school</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>242</td>
+        <td>106879</td>
+        <td>12704</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC-BY-NC-SA-3.0" data-name="contacts-science-gallery" data-search="contacts-science-gallery Undirected Temporal Social">
+        <td><a href="datasets/contacts-science-gallery.html">contacts-science-gallery</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>10972</td>
+        <td>338815</td>
+        <td>52706</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social" data-license="CC0-1.0" data-name="contacts-workplace" data-search="contacts-workplace Undirected Temporal Social">
+        <td><a href="datasets/contacts-workplace.html">contacts-workplace</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span></td>
+        <td>92</td>
+        <td>9645</td>
+        <td>788</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-brazilian" data-search="cooking-brazilian Undirected Food">
+        <td><a href="datasets/cooking-brazilian.html">cooking-brazilian</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>853</td>
+        <td>448</td>
+        <td>448</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-british" data-search="cooking-british Undirected Food">
+        <td><a href="datasets/cooking-british.html">cooking-british</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1166</td>
+        <td>796</td>
+        <td>796</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-cajun_creole" data-search="cooking-cajun_creole Undirected Food">
+        <td><a href="datasets/cooking-cajun_creole.html">cooking-cajun_creole</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1576</td>
+        <td>1525</td>
+        <td>1525</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-chinese" data-search="cooking-chinese Undirected Food">
+        <td><a href="datasets/cooking-chinese.html">cooking-chinese</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1792</td>
+        <td>2644</td>
+        <td>2644</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-filipino" data-search="cooking-filipino Undirected Food">
+        <td><a href="datasets/cooking-filipino.html">cooking-filipino</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>947</td>
+        <td>750</td>
+        <td>750</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-french" data-search="cooking-french Undirected Food">
+        <td><a href="datasets/cooking-french.html">cooking-french</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>2102</td>
+        <td>2609</td>
+        <td>2609</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-greek" data-search="cooking-greek Undirected Food">
+        <td><a href="datasets/cooking-greek.html">cooking-greek</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1198</td>
+        <td>1162</td>
+        <td>1162</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-indian" data-search="cooking-indian Undirected Food">
+        <td><a href="datasets/cooking-indian.html">cooking-indian</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1664</td>
+        <td>2980</td>
+        <td>2980</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-irish" data-search="cooking-irish Undirected Food">
+        <td><a href="datasets/cooking-irish.html">cooking-irish</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>999</td>
+        <td>662</td>
+        <td>662</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-italian" data-search="cooking-italian Undirected Food">
+        <td><a href="datasets/cooking-italian.html">cooking-italian</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>2929</td>
+        <td>7758</td>
+        <td>7758</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-jamaican" data-search="cooking-jamaican Undirected Food">
+        <td><a href="datasets/cooking-jamaican.html">cooking-jamaican</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>877</td>
+        <td>510</td>
+        <td>510</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-japanese" data-search="cooking-japanese Undirected Food">
+        <td><a href="datasets/cooking-japanese.html">cooking-japanese</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1439</td>
+        <td>1387</td>
+        <td>1387</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-korean" data-search="cooking-korean Undirected Food">
+        <td><a href="datasets/cooking-korean.html">cooking-korean</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>898</td>
+        <td>818</td>
+        <td>818</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-mexican" data-search="cooking-mexican Undirected Food">
+        <td><a href="datasets/cooking-mexican.html">cooking-mexican</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>2684</td>
+        <td>6376</td>
+        <td>6376</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-moroccan" data-search="cooking-moroccan Undirected Food">
+        <td><a href="datasets/cooking-moroccan.html">cooking-moroccan</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>974</td>
+        <td>810</td>
+        <td>810</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Food" data-license="" data-name="cooking-multiplex" data-search="cooking-multiplex Multiplex Food">
+        <td><a href="datasets/cooking-multiplex.html">cooking-multiplex</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Food</span></td>
+        <td>6714</td>
+        <td>39257</td>
+        <td>39243</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-russian" data-search="cooking-russian Undirected Food">
+        <td><a href="datasets/cooking-russian.html">cooking-russian</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>872</td>
+        <td>486</td>
+        <td>486</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-southern_us" data-search="cooking-southern_us Undirected Food">
+        <td><a href="datasets/cooking-southern_us.html">cooking-southern_us</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>2462</td>
+        <td>4235</td>
+        <td>4235</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-spanish" data-search="cooking-spanish Undirected Food">
+        <td><a href="datasets/cooking-spanish.html">cooking-spanish</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1263</td>
+        <td>977</td>
+        <td>977</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-thai" data-search="cooking-thai Undirected Food">
+        <td><a href="datasets/cooking-thai.html">cooking-thai</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1376</td>
+        <td>1518</td>
+        <td>1518</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Food" data-license="" data-name="cooking-vietnamese" data-search="cooking-vietnamese Undirected Food">
+        <td><a href="datasets/cooking-vietnamese.html">cooking-vietnamese</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Food</span></td>
+        <td>1108</td>
+        <td>806</td>
+        <td>806</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected" data-license="MIT" data-name="cora" data-search="cora Undirected">
+        <td><a href="datasets/cora.html">cora</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>2708</td>
+        <td>970</td>
+        <td>970</td>
+    </tr>
+    
+
+    <tr data-tags="Directed, Temporal, Finance" data-license="CC-BY-4.0" data-name="crypto-bitcoin-201411" data-search="crypto-bitcoin-201411 Directed Temporal Finance">
+        <td><a href="datasets/crypto-bitcoin-201411.html">crypto-bitcoin-201411</a></td>
+        <td><span class="tag">Directed</span> <span class="tag">Temporal</span> <span class="tag">Finance</span></td>
+        <td>2511247</td>
+        <td>1362511</td>
+        <td>1225161</td>
+    </tr>
+    
+
+    <tr data-tags="Directed, Temporal, Finance" data-license="CC-BY-4.0" data-name="crypto-bitcoin-201506" data-search="crypto-bitcoin-201506 Directed Temporal Finance">
+        <td><a href="datasets/crypto-bitcoin-201506.html">crypto-bitcoin-201506</a></td>
+        <td><span class="tag">Directed</span> <span class="tag">Temporal</span> <span class="tag">Finance</span></td>
+        <td>2534508</td>
+        <td>1403013</td>
+        <td>1286877</td>
+    </tr>
+    
+
+    <tr data-tags="Directed, Temporal, Finance" data-license="CC-BY-4.0" data-name="crypto-bitcoin-201601" data-search="crypto-bitcoin-201601 Directed Temporal Finance">
+        <td><a href="datasets/crypto-bitcoin-201601.html">crypto-bitcoin-201601</a></td>
+        <td><span class="tag">Directed</span> <span class="tag">Temporal</span> <span class="tag">Finance</span></td>
+        <td>2524976</td>
+        <td>1462575</td>
+        <td>1349684</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal, Social, Technology" data-license="" data-name="email-EU" data-search="email-EU Undirected Temporal Social Technology">
+        <td><a href="datasets/email-EU.html">email-EU</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span> <span class="tag">Social</span> <span class="tag">Technology</span></td>
+        <td>1005</td>
+        <td>209508</td>
+        <td>24520</td>
+    </tr>
+    
+
+    <tr data-tags="Directed, Temporal, Social, Technology" data-license="" data-name="email-Enron" data-search="email-Enron Directed Temporal Social Technology">
+        <td><a href="datasets/email-Enron.html">email-Enron</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Directed</span> <span class="tag">Temporal</span> <span class="tag">Social</span> <span class="tag">Technology</span></td>
+        <td>84172</td>
+        <td>235395</td>
+        <td>111558</td>
+    </tr>
+    
+
+    <tr data-tags="Directed, Temporal, Social, Technology" data-license="" data-name="email-Enron-core" data-search="email-Enron-core Directed Temporal Social Technology">
+        <td><a href="datasets/email-Enron-core.html">email-Enron-core</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Directed</span> <span class="tag">Temporal</span> <span class="tag">Social</span> <span class="tag">Technology</span></td>
+        <td>143</td>
+        <td>10472</td>
+        <td>1840</td>
+    </tr>
+    
+
+    <tr data-tags="Food, Undirected" data-license="GPL-3.0-only" data-name="flavourcompounds" data-search="flavourcompounds Food Undirected">
+        <td><a href="datasets/flavourcompounds.html">flavourcompounds</a></td>
+        <td><span class="tag">Food</span> <span class="tag">Undirected</span></td>
+        <td>1107</td>
+        <td>1153</td>
+        <td>1153</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Biology" data-license="" data-name="foodwebanalysis" data-search="foodwebanalysis Undirected Biology">
+        <td><a href="datasets/foodwebanalysis.html">foodwebanalysis</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Biology</span></td>
+        <td>128</td>
+        <td>127497</td>
+        <td>127497</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social" data-license="" data-name="house-bills" data-search="house-bills Undirected Social">
+        <td><a href="datasets/house-bills.html">house-bills</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span></td>
+        <td>1494</td>
+        <td>60987</td>
+        <td>54933</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social" data-license="" data-name="house-committees" data-search="house-committees Undirected Social">
+        <td><a href="datasets/house-committees.html">house-committees</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span></td>
+        <td>1290</td>
+        <td>341</td>
+        <td>336</td>
+    </tr>
+    
+
+    <tr data-tags="Geopolitical, Undirected" data-license="" data-name="language-country" data-search="language-country Geopolitical Undirected">
+        <td><a href="datasets/language-country.html">language-country</a></td>
+        <td><span class="tag">Geopolitical</span> <span class="tag">Undirected</span></td>
+        <td>234</td>
+        <td>109</td>
+        <td>109</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected" data-license="CC-BY-3.0" data-name="Marvel" data-search="Marvel Undirected">
+        <td><a href="datasets/marvel.html">Marvel</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>6439</td>
+        <td>10222</td>
+        <td>10222</td>
+    </tr>
+    
+
+    <tr data-tags="Discussion forum, Undirected" data-license="" data-name="mathoverflow-answers" data-search="mathoverflow-answers Discussion forum Undirected">
+        <td><a href="datasets/mathoverflow-answers.html">mathoverflow-answers</a></td>
+        <td><span class="tag">Discussion forum</span> <span class="tag">Undirected</span></td>
+        <td>73851</td>
+        <td>5445</td>
+        <td>5445</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Biology, Games, Geography" data-license="BSD-3-Clause" data-name="pokemon-encounter-method-multiplex" data-search="pokemon-encounter-method-multiplex Multiplex Biology Games Geography">
+        <td><a href="datasets/pokemon-encounter-method-multiplex.html">pokemon-encounter-method-multiplex</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span> <span class="tag">Geography</span></td>
+        <td>1328</td>
+        <td>1119</td>
+        <td>1119</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Biology, Games, Geography" data-license="BSD-3-Clause" data-name="pokemon-locations" data-search="pokemon-locations Undirected Biology Games Geography">
+        <td><a href="datasets/pokemon-locations.html">pokemon-locations</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Biology</span> <span class="tag">Games</span> <span class="tag">Geography</span></td>
+        <td>1328</td>
+        <td>672</td>
+        <td>672</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Biology, Games, Geography" data-license="BSD-3-Clause" data-name="pokemon-locations-dual" data-search="pokemon-locations-dual Undirected Biology Games Geography">
+        <td><a href="datasets/pokemon-locations-dual.html">pokemon-locations-dual</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Biology</span> <span class="tag">Games</span> <span class="tag">Geography</span></td>
+        <td>884</td>
+        <td>618</td>
+        <td>618</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Biology, Games, Geography" data-license="BSD-3-Clause" data-name="pokemon-locations-region-multiplex" data-search="pokemon-locations-region-multiplex Multiplex Biology Games Geography">
+        <td><a href="datasets/pokemon-locations-region-multiplex.html">pokemon-locations-region-multiplex</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span> <span class="tag">Geography</span></td>
+        <td>1328</td>
+        <td>699</td>
+        <td>699</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Biology, Games, Geography" data-license="BSD-3-Clause" data-name="pokemon-locations-version-multiplex" data-search="pokemon-locations-version-multiplex Multiplex Biology Games Geography">
+        <td><a href="datasets/pokemon-locations-version-multiplex.html">pokemon-locations-version-multiplex</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span> <span class="tag">Geography</span></td>
+        <td>1328</td>
+        <td>2350</td>
+        <td>2350</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Biology, Games" data-license="BSD-3-Clause" data-name="pokemon-moves" data-search="pokemon-moves Undirected Biology Games">
+        <td><a href="datasets/pokemon-moves.html">pokemon-moves</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Biology</span> <span class="tag">Games</span></td>
+        <td>1328</td>
+        <td>811</td>
+        <td>811</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Biology, Games" data-license="BSD-3-Clause" data-name="pokemon-moves-dual" data-search="pokemon-moves-dual Undirected Biology Games">
+        <td><a href="datasets/pokemon-moves-dual.html">pokemon-moves-dual</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Biology</span> <span class="tag">Games</span></td>
+        <td>833</td>
+        <td>1194</td>
+        <td>1194</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Biology, Games" data-license="BSD-3-Clause" data-name="pokemon-moves-learn-method-full-multiplex" data-search="pokemon-moves-learn-method-full-multiplex Multiplex Biology Games">
+        <td><a href="datasets/pokemon-moves-learn-method-full-multiplex.html">pokemon-moves-learn-method-full-multiplex</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span></td>
+        <td>1328</td>
+        <td>1793</td>
+        <td>1793</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Biology, Games" data-license="BSD-3-Clause" data-name="pokemon-moves-learn-method-multiplex" data-search="pokemon-moves-learn-method-multiplex Multiplex Biology Games">
+        <td><a href="datasets/pokemon-moves-learn-method-multiplex.html">pokemon-moves-learn-method-multiplex</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span></td>
+        <td>1328</td>
+        <td>1779</td>
+        <td>1779</td>
+    </tr>
+    
+
+    <tr data-tags="Multiplex, Biology, Games" data-license="BSD-3-Clause" data-name="pokemon-moves-version-group-multiplex" data-search="pokemon-moves-version-group-multiplex Multiplex Biology Games">
+        <td><a href="datasets/pokemon-moves-version-group-multiplex.html">pokemon-moves-version-group-multiplex</a> <span class="badge bg-success ms-2" aria-label="Newly added dataset">New</span> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Multiplex</span> <span class="tag">Biology</span> <span class="tag">Games</span></td>
+        <td>1328</td>
+        <td>9530</td>
+        <td>9530</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Edge attributed, Food" data-license="" data-name="recipes" data-search="recipes Undirected Edge attributed Food">
+        <td><a href="datasets/recipes.html">recipes</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Edge attributed</span> <span class="tag">Food</span></td>
+        <td>381</td>
+        <td>48983</td>
+        <td>48983</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social" data-license="" data-name="senate-bills" data-search="senate-bills Undirected Social">
+        <td><a href="datasets/senate-bills.html">senate-bills</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span></td>
+        <td>294</td>
+        <td>29157</td>
+        <td>21721</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Social" data-license="" data-name="senate-committees" data-search="senate-committees Undirected Social">
+        <td><a href="datasets/senate-committees.html">senate-committees</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Social</span></td>
+        <td>282</td>
+        <td>315</td>
+        <td>302</td>
+    </tr>
+    
+
+    <tr data-tags="Discussion forum, Undirected" data-license="" data-name="stackoverflow-answers" data-search="stackoverflow-answers Discussion forum Undirected">
+        <td><a href="datasets/stackoverflow-answers.html">stackoverflow-answers</a></td>
+        <td><span class="tag">Discussion forum</span> <span class="tag">Undirected</span></td>
+        <td>15211989</td>
+        <td>1103218</td>
+        <td>1103218</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal" data-license="" data-name="tags-ask-ubuntu" data-search="tags-ask-ubuntu Undirected Temporal">
+        <td><a href="datasets/tags-ask-ubuntu.html">tags-ask-ubuntu</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span></td>
+        <td>3029</td>
+        <td>271233</td>
+        <td>147222</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal" data-license="" data-name="tags-math-sx" data-search="tags-math-sx Undirected Temporal">
+        <td><a href="datasets/tags-math-sx.html">tags-math-sx</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span></td>
+        <td>1629</td>
+        <td>822059</td>
+        <td>170476</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Temporal" data-license="" data-name="tags-stack-overflow" data-search="tags-stack-overflow Undirected Temporal">
+        <td><a href="datasets/tags-stack-overflow.html">tags-stack-overflow</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Temporal</span></td>
+        <td>49998</td>
+        <td>14458875</td>
+        <td>5537637</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Consumer behaviour" data-license="" data-name="trivago-clicks" data-search="trivago-clicks Undirected Consumer behaviour">
+        <td><a href="datasets/trivago-clicks.html">trivago-clicks</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Consumer behaviour</span></td>
+        <td>172738</td>
+        <td>220971</td>
+        <td>220971</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Consumer behaviour" data-license="" data-name="walmart-trips" data-search="walmart-trips Undirected Consumer behaviour">
+        <td><a href="datasets/walmart-trips.html">walmart-trips</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Consumer behaviour</span></td>
+        <td>88860</td>
+        <td>65979</td>
+        <td>65979</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected" data-license="" data-name="whiskyfun" data-search="whiskyfun Undirected">
+        <td><a href="datasets/whiskyfun.html">whiskyfun</a></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>208</td>
+        <td>117</td>
+        <td>117</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Authorship" data-license="" data-name="wikipedia-coedit" data-search="wikipedia-coedit Undirected Authorship">
+        <td><a href="datasets/wikipedia-coedit.html">wikipedia-coedit</a></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Authorship</span></td>
+        <td>8211</td>
+        <td>954</td>
+        <td>954</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected" data-license="MIT" data-name="yelp_business_reviews" data-search="yelp_business_reviews Undirected">
+        <td><a href="datasets/yelp_business_reviews.html">yelp_business_reviews</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span></td>
+        <td>50758</td>
+        <td>667542</td>
+        <td>667542</td>
+    </tr>
+    
+
+    <tr data-tags="Undirected, Biology" data-license="CC-BY-4.0" data-name="zoo" data-search="zoo Undirected Biology">
+        <td><a href="datasets/zoo.html">zoo</a> <span class="badge bg-info ms-2" aria-label="Metadata rich dataset">Metadata-rich</span></td>
+        <td><span class="tag">Undirected</span> <span class="tag">Biology</span></td>
+        <td>100</td>
+        <td>41</td>
+        <td>41</td>
+    </tr>
+    
+                                </tbody>
+                            </table>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+    <section id="snippets" class="quick-band">
+        <div class="container">
+            <div class="band-header">
+                <div>
+                    <h2>Quick ways to load datasets</h2>
+                    <p class="text-muted">Minimal snippets to get data into your workflow.</p>
+                </div>
+            </div>
+            <div class="quick-band-grid">
+                <div class="quick-card">
+                    <div class="quick-title">
+                        <i class="fa-solid fa-download me-2"></i>Download & read
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded overflow-auto mb-2 mt-0" id="tip-download"><code class="language-python">from hypergraphx.readwrite import load_hypergraph
+H = load_hypergraph("DATASET_PATH")</code></pre>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="copySnippet('tip-download', this)">
+                        <i class="fa-regular fa-copy me-1"></i>Copy
+                    </button>
+                    <div class="small text-muted mt-2">Replace <code>DATASET_PATH</code> with the file path.</div>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-title">
+                        <i class="fab fa-github me-2"></i>Dataset loader
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded overflow-auto mb-2 mt-0" id="tip-hgx"><code class="language-python">from hypergraphx.readwrite import load_hypergraph_from_server
+H = load_hypergraph_from_server("DATASET_NAME")</code></pre>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="copySnippet('tip-hgx', this)">
+                        <i class="fa-regular fa-copy me-1"></i>Copy
+                    </button>
+                    <div class="small text-muted mt-2">Replace <code>DATASET_NAME</code> with a dataset identifier.</div>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-title">
+                        <i class="fa fa-down-left-and-up-right-to-center me-2"></i>HIF
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded overflow-auto mb-2 mt-0" id="tip-hif"><code class="language-python">from hypergraphx.readwrite import write_hif
+write_hif(H, "DATASET_NAME.hif.json")</code></pre>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="copySnippet('tip-hif', this)">
+                        <i class="fa-regular fa-copy me-1"></i>Copy
+                    </button>
+                    <div class="small text-muted mt-2">Replace <code>DATASET_NAME.hif.json</code> with the file path.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="report-section">
+        <div class="container my-5">
+            <h2 class="text-center mb-0">Have something to report?</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="text-center p-4">
+                        <p class="mb-4 text-muted">
+                            Found a bug, attribution issue, or have a feature request?
+                            Open an issue on our GitHub repository and we’ll take a look.
+                        </p>
+                        <a href="https://github.com/HGX-Team/hypergraphx-data/issues"
+                           class="btn btn-github btn-lg"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg class="btn-github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+                                  0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+                                  -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                                  0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82
+                                  2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+                                  0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                            </svg>
+                            <span>Report on GitHub</span>
+                        </a>
+                        <p class="mt-3 mb-0 small text-muted">
+                            Prefer email? Contact us at
+                            <a href="mailto:lotitoq@ceu.edu">lotitoq@ceu.edu</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Footer -->
+	    <footer class="footer-custom bg-dark text-white py-3">
+	        <div class="container text-center">
+	            <div>Hypergraphx-data: a repository of higher-order network datasets · © <span id="footerYear">2026</span></div>
+	        </div>
+	    </footer>
+    <script>
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+	    </script>
+
+	    <!-- Bootstrap JS (Optional) -->
+	    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	    <!-- jQuery -->
+	    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	    <!-- DataTables JS -->
+	    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	    <!-- Code highlight -->
+	    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+	    <!-- Link to the external JS file -->
+	    <script defer src="static/js/script.js"></script>
+
+		    <script>
+		        document.addEventListener('DOMContentLoaded', function () {
+		            if (window.hljs && typeof window.hljs.highlightAll === 'function') {
+		                window.hljs.highlightAll();
+		            }
+		        });
+		    </script>
+
+    <script>
+        function copySnippet(preId, btn) {
+            const el = document.getElementById(preId);
+            const text = el ? el.innerText : "";
+            if (!text) return;
+            const original = btn.innerHTML;
+
+            const updateCopied = () => {
+                btn.innerHTML = '<i class="fa-solid fa-check me-1"></i>Copied';
+                setTimeout(() => btn.innerHTML = original, 1200);
+            };
+
+            const fallbackCopy = () => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'absolute';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.select();
+                ta.setSelectionRange(0, ta.value.length);
+                try {
+                    document.execCommand('copy');
+                    updateCopied();
+                } finally {
+                    ta.remove();
+                }
+            };
+
+            if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+                navigator.clipboard.writeText(text).then(updateCopied).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+        }
+    </script>
+
+</body>
+</html>

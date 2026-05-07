@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacts-high-school</title>
+    <meta name="description" content="This dataset corresponds to the contacts and friendship relations between students in a high school in Marseilles, France, in December 2013. Nodes represent individuals. Original data are pairwise contacts; hyperedges are constructed by promoting cliques of contacts into higher-order group interactions.">
+    <meta property="og:title" content="contacts-high-school">
+    <meta property="og:description" content="This dataset corresponds to the contacts and friendship relations between students in a high school in Marseilles, France, in December 2013. Nodes represent individuals. Original data are pairwise contacts; hyperedges are constructed by promoting cliques of contacts into higher-order group interactions.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../static/images/logo_cropped-removedbg.png">
+    <link rel="icon" type="image/png" href="../static/images/logo_cropped-removedbg.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css"> <!-- Link to your global stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Bootstrap Navbar (Header) with Burger Menu -->
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="../index.html">
+                <img src="../static/images/logo_cropped-removedbg-whitegraph.png" alt="HGX Logo" width="30" height="30" class="d-inline-block align-text-center">
+                Hypergraphx-data
+            </a>
+            
+            <!-- Burger Icon for Collapsing Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../statistics.html"><i class="fa-solid fa-database"></i> Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html"><i class="fa-solid fa-address-card"></i> About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-muted dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-link"></i> Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx/tree/main/tutorials" target="_blank" rel="noopener noreferrer">Tutorials <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/pszufe/HIF-standard" target="_blank" rel="noopener noreferrer">HIF <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://github.com/HGX-Team/hypergraphx" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                            <li><a class="dropdown-item" href="https://hypergraphx.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Docs <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main id="mainContent">
+    <div class="container mt-3">
+        <div class="text-center">
+            <img src="../static/images/logo.png" alt="Hypergraphx-data" class="page-logo">
+        </div>
+
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Datasets</a></li>
+                <li class="breadcrumb-item active" aria-current="page">contacts-high-school</li>
+            </ol>
+        </nav>
+
+        <h1 class="dataset-title">contacts-high-school</h1>
+        
+
+        <!-- Dataset Tags -->
+        <div class="mb-3 text-center dataset-tags">
+            <h4 style="display: inline;">Tags: </h4>
+            <span><a class="tag tag-link" href="../index.html?tags=Undirected" aria-label="Filter catalog by tag Undirected">Undirected</a> <a class="tag tag-link" href="../index.html?tags=Temporal" aria-label="Filter catalog by tag Temporal">Temporal</a> <a class="tag tag-link" href="../index.html?tags=Social" aria-label="Filter catalog by tag Social">Social</a></span> <!-- Tags will be replaced dynamically -->
+        </div>
+
+        <!-- Dataset Description -->
+        <div class="mb-3">
+            <h4><i class="fa-solid fa-circle-info section-title-icon"></i> Description</h4>
+            <p>This dataset corresponds to the contacts and friendship relations between students in a high school in Marseilles, France, in December 2013. Nodes represent individuals. Original data are pairwise contacts; hyperedges are constructed by promoting cliques of contacts into higher-order group interactions.</p> <!-- Description will be replaced dynamically -->
+        </div>
+
+        <div class="dataset-mini-nav" aria-label="Jump to section">
+            <span class="mini-nav-label">Jump to</span>
+            <a href="#stats">Stats</a>
+            <a href="#downloads">Download</a>
+            <a href="#metadata">Metadata</a>
+            <a href="#related">Related</a>
+            <a href="#citation">Citation</a>
+        </div>
+
+        <!-- Dataset Statistics -->
+        <div class="mb-3" id="stats">
+            <h4><i class="fa-solid fa-chart-column section-title-icon"></i> Basic statistics</h4>
+            <ul>
+                <li><b>Nodes:</b> 327</li> <!-- Nodes will be replaced dynamically -->
+                <li><b>Hyperedges:</b> 172035</li> <!-- Hyperedges will be replaced dynamically -->
+                <li><b>Unique hyperedges:</b> 7818</li>
+                <li><b>Max size hyperedge:</b> 5</li>
+            </ul>
+        </div>
+
+        <!-- Hypergraph Metadata -->
+        <div id="metadata"></div>
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Hypergraph metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>type</b></td><td>(STRING) Hypergraph type (e.g., TemporalHypergraph).</td></tr><tr><td><b>weighted</b></td><td>(BOOL) Whether the hypergraph is weighted (e.g., false).</td></tr></tbody></table></div>
+
+        <!-- Nodes Metadata -->
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Node metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>id</b></td><td>(INT) Unique identifier for the student (e.g., 454).</td></tr><tr><td><b>class</b></td><td>(STRING) Student class identifier (e.g., 2BIO1, 2BIO2, MP, MP*1).</td></tr><tr><td><b>sex</b></td><td>(STRING) Student sex (M=male, F=female, Unknown) (e.g., F).</td></tr><tr><td><b>has_facebook</b></td><td>(BOOL) Whether the student has a Facebook account (e.g., true).</td></tr><tr><td><b>facebook_friends</b></td><td>(LIST[INT]) List of student IDs who are Facebook friends (e.g., [34, 151, 156]).</td></tr><tr><td><b>has_compiled_questionnaire</b></td><td>(BOOL) Whether the student completed the friendship questionnaire (e.g., false).</td></tr><tr><td><b>questionnaire_friends</b></td><td>(LIST[INT]) List of student IDs reported as friends in the questionnaire (e.g., [205, 272, 494]).</td></tr></tbody></table></div>
+
+        <!-- Edges Metadata -->
+        
+    <div class="mb-4">
+        <h4 class="metadata-title"><i class="fa-solid fa-table section-title-icon"></i> Hyperedge metadata</h4>
+        <table class="table table-hover custom-metadata-table">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+    <tr><td><b>time</b></td><td>(INT) Normalized timestamp (seconds from first contact) (e.g., 0).</td></tr><tr><td><b>original_time</b></td><td>(INT) Unix timestamp of the contact event (e.g., 1385982020).</td></tr></tbody></table></div>
+
+        <div class="chart-panel">
+            <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
+            <div class="chart-container chart-container-left">
+                <canvas id="edgeSizeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-panel" id="timeDistSection" style="display: none;">
+            <h4><i class="fa-solid fa-clock section-title-icon"></i> Hyperedge temporal distribution</h4>
+            <div class="chart-container chart-container-left">
+                <div class="chart-subtitle" id="timeSubtitle"></div>
+                <canvas id="timeDistributionChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-panel">
+            <h4><i class="fa-solid fa-chart-line section-title-icon"></i> Hyperdegree distribution</h4>
+            <div class="chart-container chart-container-left">
+                <canvas id="nodeDistributionChart"></canvas>
+            </div>
+        </div>
+      
+
+        <div class="mb-3" id="downloads">
+            <div class="mb-3">
+<h4><i class="fa-solid fa-download section-title-icon"></i> Download</h4>
+<ul class="versions-list">
+
+        <li>
+            <span class="version-label">Version 1.0</span>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/contacts-high-school/contacts-high-school.hgx.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(2.6 MB)</span>
+            </a>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/contacts-high-school/contacts-high-school.json.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(776.3 KB)</span>
+            </a>
+        </li>
+        </ul>
+</div>
+
+        </div>
+
+        <div id="related"></div>
+        <div class="mb-4" id="relatedDatasets" data-current-dataset="contacts-high-school" data-vertices="327" data-edges="172035">
+            <h4><i class="fa-solid fa-diagram-project section-title-icon"></i> Related datasets</h4>
+            <div class="related-datasets-list" id="relatedDatasetsList">
+                <div class="text-muted">Loading related datasets...</div>
+            </div>
+        </div>
+        
+
+        <!-- Provenance -->
+        <div class="mb-3" id="provenance">
+            <h4><i class="fa-solid fa-link section-title-icon"></i> Provenance</h4>
+            <p><strong>Source:</strong> <a href="http://www.sociopatterns.org/datasets/high-school-contact-and-friendship-networks/" target="_blank" rel="noopener noreferrer">http://www.sociopatterns.org/datasets/high-school-contact-and-friendship-networks/</a></p>
+<p><strong>License:</strong> <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener noreferrer"><span class="badge bg-warning text-dark">CC BY-NC-SA 3.0</span></a></p>
+<p><strong>Reproducibility:</strong> <a href="https://github.com/HGX-Team/hypergraphx-data/tree/main/reproducibility/contacts-high-school" target="_blank" rel="noopener noreferrer">Instructions and scripts</a></p>
+        </div>
+
+        <!-- BibTeX Display -->
+
+        <div class="mb-3" id="citation">
+            <h4><i class="fa-solid fa-quote-right section-title-icon"></i> Citation</h4>
+            <p>When this data is used in published research or for visualization purposes, please cite the following:</p>
+        
+            <button class="btn btn-sm btn-primary" style="background-color: #136c16; border-color: #19531b;" type="button" data-bs-toggle="collapse" data-bs-target="#bibtexContainer" aria-expanded="false" aria-controls="bibtexContainer">
+                Show BibTeX <i class="fa-solid fa-angle-down"></i>
+            </button>
+        
+            <div class="collapse mt-2" id="bibtexContainer">
+                <pre class="bibtex-container" id="bibtexContent">
+                    <button class="copy-button" onclick="copyBibTex()">Copy</button>
+                    <span class="copy-status" id="copyStatus">Copied!</span>
+                    @article{mastrandrea2015contact,
+  title={Contact patterns in a high school: a comparison between data collected using wearable sensors, contact diaries and friendship surveys},
+  author={Mastrandrea, Rossana and Fournet, Julie and Barrat, Alain},
+  journal={PloS one},
+  volume={10},
+  number={9},
+  pages={e0136497},
+  year={2015},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+
+@article{lotito2023hypergraphx,
+    author = {Lotito, Quintino Francesco and Contisciani, Martina and De Bacco, Caterina and Di Gaetano, Leonardo and Gallo, Luca and Montresor, Alberto and Musciotto, Federico and Ruggeri, Nicolò and Battiston, Federico},
+    title = "{Hypergraphx: a library for higher-order network analysis}",
+    journal = {Journal of Complex Networks},
+    volume = {11},
+    number = {3},
+    year = {2023},
+    month = {05},
+    issn = {2051-1329},
+    doi = {10.1093/comnet/cnad019},
+    url = {https://doi.org/10.1093/comnet/cnad019},
+    note = {cnad019},
+    eprint = {https://academic.oup.com/comnet/article-pdf/11/3/cnad019/50461094/cnad019.pdf},
+}
+                </pre>
+            </div>
+        </div>
+
+        <!-- Back to Home Link -->
+        <div class="text-center mt-3">
+            <a href="../index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Data Repository</a> <!-- Button to go back to the main page -->
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+        <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+	    <footer class="footer-custom bg-dark text-white py-3">
+	        <div class="container text-center">
+	            <div>Hypergraphx-data: a repository of higher-order network datasets · © <span id="footerYear">2026</span></div>
+	        </div>
+	    </footer>
+    <script>
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for Copying BibTeX -->
+    <script>
+    function copyBibTex() {
+        const bibtexContentDiv = document.getElementById("bibtexContent");
+        if (!bibtexContentDiv) return;
+
+        // Extract only the text content, ignoring nested HTML and elements
+        const bibtexText = Array.from(bibtexContentDiv.childNodes)
+            .filter(node => node.nodeType === Node.TEXT_NODE)
+            .map(node => node.textContent.trim())
+            .join("\n");
+
+        const showCopied = () => {
+            const copyStatus = document.getElementById("copyStatus");
+            if (!copyStatus) return;
+            copyStatus.style.display = "inline";
+            setTimeout(() => {
+                copyStatus.style.display = "none";
+            }, 2000);
+        };
+
+        const fallbackCopy = () => {
+            const ta = document.createElement('textarea');
+            ta.value = bibtexText;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            ta.setSelectionRange(0, ta.value.length);
+            try {
+                document.execCommand('copy');
+                showCopied();
+            } finally {
+                ta.remove();
+            }
+        };
+
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            navigator.clipboard.writeText(bibtexText).then(showCopied).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
+        }
+    }
+
+    </script>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const hyperedgeBins = [2, 3, 4, 5];
+const hyperedgeBinLabels = ["2", "3", "4", "5"];
+const hyperedgeFrequencies = [163977, 7475, 576, 7];
+    const timeSeriesX = [600.0, 1800.0, 3000.0, 4200.0, 5400.0, 6600.0, 7800.0, 9000.0, 10200.0, 11400.0, 12600.0, 13800.0, 15000.0, 16200.0, 17400.0, 18600.0, 19800.0, 21000.0, 22200.0, 23400.0, 24600.0, 25800.0, 27000.0, 28200.0, 29400.0, 30600.0, 31800.0, 33000.0, 34200.0, 35400.0, 36600.0, 37800.0, 39000.0, 40200.0, 41400.0, 42600.0, 43800.0, 45000.0, 46200.0, 47400.0, 48600.0, 49800.0, 51000.0, 52200.0, 53400.0, 54600.0, 55800.0, 57000.0, 58200.0, 59400.0, 60600.0, 61800.0, 63000.0, 64200.0, 65400.0, 66600.0, 67800.0, 69000.0, 70200.0, 71400.0, 72600.0, 73800.0, 75000.0, 76200.0, 77400.0, 78600.0, 79800.0, 81000.0, 82200.0, 83400.0, 84600.0, 85800.0, 87000.0, 88200.0, 89400.0, 90600.0, 91800.0, 93000.0, 94200.0, 95400.0, 96600.0, 97800.0, 99000.0, 100200.0, 101400.0, 102600.0, 103800.0, 105000.0, 106200.0, 107400.0, 108600.0, 109800.0, 111000.0, 112200.0, 113400.0, 114600.0, 115800.0, 117000.0, 118200.0, 119400.0, 120600.0, 121800.0, 123000.0, 124200.0, 125400.0, 126600.0, 127800.0, 129000.0, 130200.0, 131400.0, 132600.0, 133800.0, 135000.0, 136200.0, 137400.0, 138600.0, 139800.0, 141000.0, 142200.0, 143400.0, 144600.0, 145800.0, 147000.0, 148200.0, 149400.0, 150600.0, 151800.0, 153000.0, 154200.0, 155400.0, 156600.0, 157800.0, 159000.0, 160200.0, 161400.0, 162600.0, 163800.0, 165000.0, 166200.0, 167400.0, 168600.0, 169800.0, 171000.0, 172200.0, 173400.0, 174600.0, 175800.0, 177000.0, 178200.0, 179400.0, 180600.0, 181800.0, 183000.0, 184200.0, 185400.0, 186600.0, 187800.0, 189000.0, 190200.0, 191400.0, 192600.0, 193800.0, 195000.0, 196200.0, 197400.0, 198600.0, 199800.0, 201000.0, 202200.0, 203400.0, 204600.0, 205800.0, 207000.0, 208200.0, 209400.0, 210600.0, 211800.0, 213000.0, 214200.0, 215400.0, 216600.0, 217800.0, 219000.0, 220200.0, 221400.0, 222600.0, 223800.0, 225000.0, 226200.0, 227400.0, 228600.0, 229800.0, 231000.0, 232200.0, 233400.0, 234600.0, 235800.0, 237000.0, 238200.0, 239400.0, 240600.0, 241800.0, 243000.0, 244200.0, 245400.0, 246600.0, 247800.0, 249000.0, 250200.0, 251400.0, 252600.0, 253800.0, 255000.0, 256200.0, 257400.0, 258600.0, 259800.0, 261000.0, 262200.0, 263400.0, 264600.0, 265800.0, 267000.0, 268200.0, 269400.0, 270600.0, 271800.0, 273000.0, 274200.0, 275400.0, 276600.0, 277800.0, 279000.0, 280200.0, 281400.0, 282600.0, 283800.0, 285000.0, 286200.0, 287400.0, 288600.0, 289800.0, 291000.0, 292200.0, 293400.0, 294600.0, 295800.0, 297000.0, 298200.0, 299400.0, 300600.0, 301800.0, 303000.0, 304200.0, 305400.0, 306600.0, 307800.0, 309000.0, 310200.0, 311400.0, 312600.0, 313800.0, 315000.0, 316200.0, 317400.0, 318600.0, 319800.0, 321000.0, 322200.0, 323400.0, 324600.0, 325800.0, 327000.0, 328200.0, 329400.0, 330600.0, 331800.0, 333000.0, 334200.0, 335400.0, 336600.0, 337800.0, 339000.0, 340200.0, 341400.0, 342600.0, 343800.0, 345000.0, 346200.0, 347400.0, 348600.0, 349800.0, 351000.0, 352200.0, 353400.0, 354600.0, 355800.0, 357000.0, 358200.0, 359400.0, 360600.0, 361800.0, 363000.0];
+const timeSeriesY = [2371, 1114, 1509, 1690, 805, 1279, 2575, 1738, 1746, 2180, 1754, 1436, 2086, 1876, 1210, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2362, 1921, 1945, 1742, 1724, 1953, 3040, 1816, 1576, 1850, 1626, 1605, 1697, 811, 1215, 1573, 826, 1261, 2034, 1433, 1325, 1202, 1323, 1372, 1979, 1201, 943, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1747, 1575, 1627, 2013, 1965, 2109, 3211, 1644, 1478, 1311, 1397, 1405, 1605, 915, 1271, 1574, 1056, 1150, 1496, 778, 780, 1024, 721, 813, 1081, 578, 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1508, 1618, 1548, 1664, 1506, 1817, 2826, 1532, 1294, 1410, 1363, 1583, 1612, 593, 689, 1309, 709, 711, 1495, 1118, 799, 1047, 1143, 1120, 1379, 538, 337, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1438, 1077, 1227, 1411, 1307, 1943, 3362, 1790, 1532, 1772, 1757, 1596, 1636, 1065, 1319, 1678, 715, 760, 889, 433, 511, 749, 679, 538, 650, 403, 260];
+const timeSeriesStart = [0, 1200, 2400, 3600, 4800, 6000, 7200, 8400, 9600, 10800, 12000, 13200, 14400, 15600, 16800, 18000, 19200, 20400, 21600, 22800, 24000, 25200, 26400, 27600, 28800, 30000, 31200, 32400, 33600, 34800, 36000, 37200, 38400, 39600, 40800, 42000, 43200, 44400, 45600, 46800, 48000, 49200, 50400, 51600, 52800, 54000, 55200, 56400, 57600, 58800, 60000, 61200, 62400, 63600, 64800, 66000, 67200, 68400, 69600, 70800, 72000, 73200, 74400, 75600, 76800, 78000, 79200, 80400, 81600, 82800, 84000, 85200, 86400, 87600, 88800, 90000, 91200, 92400, 93600, 94800, 96000, 97200, 98400, 99600, 100800, 102000, 103200, 104400, 105600, 106800, 108000, 109200, 110400, 111600, 112800, 114000, 115200, 116400, 117600, 118800, 120000, 121200, 122400, 123600, 124800, 126000, 127200, 128400, 129600, 130800, 132000, 133200, 134400, 135600, 136800, 138000, 139200, 140400, 141600, 142800, 144000, 145200, 146400, 147600, 148800, 150000, 151200, 152400, 153600, 154800, 156000, 157200, 158400, 159600, 160800, 162000, 163200, 164400, 165600, 166800, 168000, 169200, 170400, 171600, 172800, 174000, 175200, 176400, 177600, 178800, 180000, 181200, 182400, 183600, 184800, 186000, 187200, 188400, 189600, 190800, 192000, 193200, 194400, 195600, 196800, 198000, 199200, 200400, 201600, 202800, 204000, 205200, 206400, 207600, 208800, 210000, 211200, 212400, 213600, 214800, 216000, 217200, 218400, 219600, 220800, 222000, 223200, 224400, 225600, 226800, 228000, 229200, 230400, 231600, 232800, 234000, 235200, 236400, 237600, 238800, 240000, 241200, 242400, 243600, 244800, 246000, 247200, 248400, 249600, 250800, 252000, 253200, 254400, 255600, 256800, 258000, 259200, 260400, 261600, 262800, 264000, 265200, 266400, 267600, 268800, 270000, 271200, 272400, 273600, 274800, 276000, 277200, 278400, 279600, 280800, 282000, 283200, 284400, 285600, 286800, 288000, 289200, 290400, 291600, 292800, 294000, 295200, 296400, 297600, 298800, 300000, 301200, 302400, 303600, 304800, 306000, 307200, 308400, 309600, 310800, 312000, 313200, 314400, 315600, 316800, 318000, 319200, 320400, 321600, 322800, 324000, 325200, 326400, 327600, 328800, 330000, 331200, 332400, 333600, 334800, 336000, 337200, 338400, 339600, 340800, 342000, 343200, 344400, 345600, 346800, 348000, 349200, 350400, 351600, 352800, 354000, 355200, 356400, 357600, 358800, 360000, 361200, 362400];
+const timeSeriesEnd = [1200, 2400, 3600, 4800, 6000, 7200, 8400, 9600, 10800, 12000, 13200, 14400, 15600, 16800, 18000, 19200, 20400, 21600, 22800, 24000, 25200, 26400, 27600, 28800, 30000, 31200, 32400, 33600, 34800, 36000, 37200, 38400, 39600, 40800, 42000, 43200, 44400, 45600, 46800, 48000, 49200, 50400, 51600, 52800, 54000, 55200, 56400, 57600, 58800, 60000, 61200, 62400, 63600, 64800, 66000, 67200, 68400, 69600, 70800, 72000, 73200, 74400, 75600, 76800, 78000, 79200, 80400, 81600, 82800, 84000, 85200, 86400, 87600, 88800, 90000, 91200, 92400, 93600, 94800, 96000, 97200, 98400, 99600, 100800, 102000, 103200, 104400, 105600, 106800, 108000, 109200, 110400, 111600, 112800, 114000, 115200, 116400, 117600, 118800, 120000, 121200, 122400, 123600, 124800, 126000, 127200, 128400, 129600, 130800, 132000, 133200, 134400, 135600, 136800, 138000, 139200, 140400, 141600, 142800, 144000, 145200, 146400, 147600, 148800, 150000, 151200, 152400, 153600, 154800, 156000, 157200, 158400, 159600, 160800, 162000, 163200, 164400, 165600, 166800, 168000, 169200, 170400, 171600, 172800, 174000, 175200, 176400, 177600, 178800, 180000, 181200, 182400, 183600, 184800, 186000, 187200, 188400, 189600, 190800, 192000, 193200, 194400, 195600, 196800, 198000, 199200, 200400, 201600, 202800, 204000, 205200, 206400, 207600, 208800, 210000, 211200, 212400, 213600, 214800, 216000, 217200, 218400, 219600, 220800, 222000, 223200, 224400, 225600, 226800, 228000, 229200, 230400, 231600, 232800, 234000, 235200, 236400, 237600, 238800, 240000, 241200, 242400, 243600, 244800, 246000, 247200, 248400, 249600, 250800, 252000, 253200, 254400, 255600, 256800, 258000, 259200, 260400, 261600, 262800, 264000, 265200, 266400, 267600, 268800, 270000, 271200, 272400, 273600, 274800, 276000, 277200, 278400, 279600, 280800, 282000, 283200, 284400, 285600, 286800, 288000, 289200, 290400, 291600, 292800, 294000, 295200, 296400, 297600, 298800, 300000, 301200, 302400, 303600, 304800, 306000, 307200, 308400, 309600, 310800, 312000, 313200, 314400, 315600, 316800, 318000, 319200, 320400, 321600, 322800, 324000, 325200, 326400, 327600, 328800, 330000, 331200, 332400, 333600, 334800, 336000, 337200, 338400, 339600, 340800, 342000, 343200, 344400, 345600, 346800, 348000, 349200, 350400, 351600, 352800, 354000, 355200, 356400, 357600, 358800, 360000, 361200, 362400, 363600];
+const timeIsEpoch = false;
+const timeBucketSeconds = 1200;
+const timeGranularity = "unit";
+    const degreeBins = [7, 27, 54, 76, 106, 150, 210, 296, 415, 584, 820, 1153, 1620, 2276, 3199, 4495];
+const degreeBinLabels = ["7\u20139", "27\u201337", "54\u201375", "76\u2013105", "106\u2013149", "150\u2013209", "210\u2013295", "296\u2013414", "415\u2013583", "584\u2013819", "820\u20131152", "1153\u20131619", "1620\u20132275", "2276\u20133198", "3199\u20134494", "4495"];
+const degreeFrequencies = [2, 3, 2, 2, 11, 8, 27, 17, 34, 45, 49, 57, 44, 15, 10, 1];
+    
+
+    // Plot Hyperedge Size Distribution
+    const ctx1 = document.getElementById('edgeSizeChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Hyperedge Size Distribution (Binned)',
+                data: hyperedgeBins.map((d, i) => ({ x: d, y: hyperedgeFrequencies[i] })),
+                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    title: { display: true, text: 'Hyperedge size bin (left edge)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        maxRotation: 0,
+                        padding: 6,
+                        callback: (val) => Number(val).toLocaleString()
+                    }
+                },
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    min: 1,
+                    title: { display: true, text: 'Count (log scale)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        padding: 6,
+                        callback: (val) => val.toLocaleString()
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => {
+                            const idx = items?.[0]?.dataIndex;
+                            if (typeof idx !== 'number') return '';
+                            if (typeof hyperedgeBinLabels !== 'undefined' && Array.isArray(hyperedgeBinLabels) && hyperedgeBinLabels[idx]) {
+                                return `Size bin: ${hyperedgeBinLabels[idx]}`;
+                            }
+                            return 'Hyperedge size bin';
+                        },
+                        label: (item) => {
+                            const y = item?.parsed?.y;
+                            const count = typeof y === 'number' ? y : Number(y);
+                            return `Count: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Plot Node Degree Distribution
+    const ctx2 = document.getElementById('nodeDistributionChart').getContext('2d');
+    new Chart(ctx2, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Hyperdegree Distribution (Binned)',
+                data: degreeBins.map((d, i) => ({ x: d, y: degreeFrequencies[i] })),
+                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    title: { display: true, text: 'Hyperdegree bin (left edge)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        maxRotation: 0,
+                        padding: 6,
+                        callback: (val) => Number(val).toLocaleString()
+                    }
+                },
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: false,
+                    // min y is 1
+                    min: 1,
+                    title: { display: true, text: 'Frequency (log scale)' },
+                    grid: { display: false },
+                    ticks: {
+                        autoSkip: true,
+                        autoSkipPadding: 12,
+                        padding: 6,
+                        callback: (val) => val.toLocaleString()
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => {
+                            const idx = items?.[0]?.dataIndex;
+                            if (typeof idx !== 'number') return '';
+                            if (typeof degreeBinLabels !== 'undefined' && Array.isArray(degreeBinLabels) && degreeBinLabels[idx]) {
+                                return `Degree bin: ${degreeBinLabels[idx]}`;
+                            }
+                            return 'Hyperdegree bin';
+                        },
+                        label: (item) => {
+                            const y = item?.parsed?.y;
+                            const count = typeof y === 'number' ? y : Number(y);
+                            return `Frequency: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+        // Plot Hyperedge Temporal Distribution (if provided)
+    const timeSection = document.getElementById('timeDistSection');
+    function formatEpochSeconds(sec) {
+        const ms = sec * 1000;
+        const dt = new Date(ms);
+        const opts = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+        return new Intl.DateTimeFormat(undefined, opts).format(dt);
+    }
+
+    function formatRelativeSeconds(sec) {
+        if (sec >= 365 * 86400) {
+            const years = sec / (365 * 86400);
+            return `+${years.toFixed(years < 10 ? 1 : 0)}y`;
+        }
+        if (sec >= 30 * 86400) {
+            const months = sec / (30 * 86400);
+            return `+${months.toFixed(months < 10 ? 1 : 0)}mo`;
+        }
+        if (sec >= 86400) {
+            const days = sec / 86400;
+            return `+${days.toFixed(days < 10 ? 1 : 0)}d`;
+        }
+        if (sec >= 3600) {
+            const hours = sec / 3600;
+            return `+${hours.toFixed(hours < 10 ? 1 : 0)}h`;
+        }
+        if (sec >= 60) {
+            const mins = sec / 60;
+            return `+${mins.toFixed(mins < 10 ? 1 : 0)}m`;
+        }
+        return `+${sec.toFixed(sec < 10 ? 1 : 0)}s`;
+    }
+
+    function formatTimeValue(sec) {
+        if (typeof timeIsEpoch !== 'undefined' && timeIsEpoch) {
+            return formatEpochSeconds(sec);
+        }
+        return formatRelativeSeconds(sec);
+    }
+
+    function formatBucketSeconds(seconds) {
+        const s = Number(seconds);
+        if (!Number.isFinite(s) || s <= 0) return '';
+        if (s >= 365 * 86400) return `${Math.round(s / (365 * 86400))}y`;
+        if (s >= 30 * 86400) return `${Math.round(s / (30 * 86400))}mo`;
+        if (s >= 7 * 86400) return `${Math.round(s / (7 * 86400))}w`;
+        if (s >= 86400) return `${Math.round(s / 86400)}d`;
+        if (s >= 3600) return `${Math.round(s / 3600)}h`;
+        if (s >= 60) return `${Math.round(s / 60)}m`;
+        return `${Math.round(s)}s`;
+    }
+
+    if (typeof timeSeriesX !== 'undefined' && Array.isArray(timeSeriesX) && timeSeriesX.length) {
+        timeSection.style.display = 'block';
+        const ctx3 = document.getElementById('timeDistributionChart').getContext('2d');
+        const subtitle = document.getElementById('timeSubtitle');
+        if (subtitle) {
+            const bucketText = (typeof timeBucketSeconds === 'number' && timeBucketSeconds > 0)
+                ? ` · bucket ${formatBucketSeconds(timeBucketSeconds)}`
+                : '';
+            subtitle.textContent = (typeof timeIsEpoch !== 'undefined' && timeIsEpoch)
+                ? `UTC time (bucketed counts)${bucketText}`
+                : `Time since start (bucketed counts)${bucketText}`;
+        }
+
+        const fill = (() => {
+            const gradient = ctx3.createLinearGradient(0, 0, 0, ctx3.canvas.height || 300);
+            gradient.addColorStop(0, 'rgba(75, 192, 192, 0.22)');
+            gradient.addColorStop(1, 'rgba(75, 192, 192, 0.03)');
+            return gradient;
+        })();
+
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Hyperedge Temporal Distribution',
+                    data: timeSeriesX.map((t, i) => ({ x: t, y: timeSeriesY[i] })),
+                    backgroundColor: fill,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 5,
+                    stepped: true,
+                    tension: 0,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                normalized: true,
+                parsing: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        title: { display: true, text: 'Time' },
+                        grid: { display: false },
+                        ticks: {
+                            autoSkip: true,
+                            autoSkipPadding: 16,
+                            maxRotation: 0,
+                            padding: 6,
+                            callback: (val) => formatTimeValue(Number(val))
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        beginAtZero: true,
+                        title: { display: true, text: 'Count' },
+                        grid: { display: false },
+                        ticks: { padding: 6 }
+                    }
+                },
+                plugins: {
+                    decimation: { enabled: (Array.isArray(timeSeriesX) && timeSeriesX.length > 2000), algorithm: 'lttb', samples: 800 },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            title: (items) => {
+                                const idx = items?.[0]?.dataIndex;
+                                if (typeof idx !== 'number') return '';
+                                const start = Array.isArray(timeSeriesStart) ? timeSeriesStart[idx] : undefined;
+                                const end = Array.isArray(timeSeriesEnd) ? timeSeriesEnd[idx] : undefined;
+                                if (typeof start === 'number' && typeof end === 'number') {
+                                    return `${formatTimeValue(start)} – ${formatTimeValue(end)}`;
+                                }
+                                const t = Array.isArray(timeSeriesX) ? timeSeriesX[idx] : undefined;
+                                return (typeof t === 'number') ? formatTimeValue(t) : 'Time';
+                            },
+                            label: (item) => {
+                                const y = item?.parsed?.y;
+                                const count = typeof y === 'number' ? y : Number(y);
+                                return `Count: ${Number.isFinite(count) ? count.toLocaleString() : y}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+
+	    document.addEventListener("DOMContentLoaded", function () {
+	        const bibtexButton = document.querySelector('[data-bs-target="#bibtexContainer"]');
+	        const bibtexContainer = document.getElementById("bibtexContainer");
+
+	        bibtexContainer.addEventListener("shown.bs.collapse", function () {
+	            bibtexButton.innerHTML = 'Hide BibTeX <i class="fa-solid fa-angle-up"></i>';
+	        });
+
+	        bibtexContainer.addEventListener("hidden.bs.collapse", function () {
+	            bibtexButton.innerHTML = 'Show BibTeX <i class="fa-solid fa-angle-down"></i>';
+	        });
+	    });
+
+</script>
+
+<script src="../static/js/related-data.js"></script>
+<script src="../static/js/related.js"></script>
+<script defer src="../static/js/back-to-top.js"></script>
+
+</body>
+</html>

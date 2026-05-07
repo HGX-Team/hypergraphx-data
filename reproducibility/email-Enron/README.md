@@ -1,0 +1,19 @@
+# email-Enron reproducibility
+
+## Dataset
+- Name: email-Enron
+- Description: Nodes represent email addresses. Each hyperedge represents an email message, connecting the sender with all recipients (and may include a timestamp/weight when available). This dataset contains the emails from the Enron Email Dataset.
+
+## Source data
+- https://www.cs.cmu.edu/~enron/
+
+## Script
+- Reproducibility script not yet available.
+
+## Steps
+1. Download or access the source data from the link above.
+2. Run the generation script to produce the dataset JSON.
+3. Validate the output JSON and file sizes.
+
+## Output
+- email-Enron.json.gz
