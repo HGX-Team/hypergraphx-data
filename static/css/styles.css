@@ -177,6 +177,33 @@ p, li, span {
     gap: 0.45rem;
 }
 
+.hero-beta-note {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 680px;
+    margin-top: 14px;
+    padding: 10px 12px;
+    border: 1px solid rgba(176, 126, 25, 0.28);
+    border-left: 3px solid #b7791f;
+    border-radius: 6px;
+    background: #fff8e8;
+    color: #5f4316;
+    font-size: 0.94rem;
+    line-height: 1.45;
+}
+
+.hero-beta-note i {
+    flex: 0 0 auto;
+    margin-top: 2px;
+    color: #9a6700;
+}
+
+.hero-beta-note strong {
+    color: #4f3400;
+    font-weight: 700;
+}
+
 .hero-meta {
     margin-top: 16px;
     font-size: 0.95rem;
