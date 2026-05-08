@@ -19,6 +19,16 @@ from hypergraphx.readwrite import load_hypergraph, save_hypergraph
 DATASET_NAME = 'pokemon-locations'
 CORE_METHODS = {"level-up", "machine", "egg", "tutor"}
 
+SINGLETON_EDGE_FIELDS = {
+    "pokemon-encounter-method-multiplex": {"encounter_methods"},
+    "pokemon-locations-region-multiplex": {"regions"},
+    "pokemon-locations-version-multiplex": {"versions", "n_observations"},
+    "pokemon-moves-dual": {"min_level"},
+    "pokemon-moves-learn-method-full-multiplex": {"learn_methods"},
+    "pokemon-moves-learn-method-multiplex": {"learn_methods"},
+    "pokemon-moves-version-group-multiplex": {"version_groups"},
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -70,8 +80,12 @@ def aggregate_meta(existing: dict, extra: dict) -> dict:
 
 def finalize_meta(metadata: dict) -> dict:
     out = {}
+    singleton_fields = SINGLETON_EDGE_FIELDS.get(DATASET_NAME, set())
     for key, value in metadata.items():
         if isinstance(value, list):
+            if key in singleton_fields and len(value) == 1:
+                out[key] = value[0]
+                continue
             try:
                 out[key] = sorted(value)
             except TypeError:

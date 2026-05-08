@@ -145,7 +145,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>layer</b></td><td>(STRING) Multiplex layer identifier (e.g., level-up).</td></tr><tr><td><b>move_ids</b></td><td>(list of INTs) PokéAPI move identifiers represented by the hyperedge (e.g., [85]).</td></tr><tr><td><b>move_names</b></td><td>(list of STRINGs) Move names represented by the hyperedge (e.g., [thunderbolt]).</td></tr><tr><td><b>move_types</b></td><td>(list of STRINGs) Move types represented by the hyperedge (e.g., [electric]).</td></tr><tr><td><b>damage_classes</b></td><td>(list of STRINGs) Damage classes represented by the hyperedge (e.g., [special]).</td></tr><tr><td><b>generations</b></td><td>(list of STRINGs) Move introduction generations represented by the hyperedge (e.g., [generation-i]).</td></tr><tr><td><b>version_groups</b></td><td>(list of STRINGs) Version groups in which the incidence appears (e.g., [red-blue]).</td></tr><tr><td><b>learn_methods</b></td><td>(list of STRINGs) Learn methods represented by the incidence (e.g., [level-up]).</td></tr><tr><td><b>min_level</b></td><td>(INT) Minimum nonzero level at which a move is learned, when available (e.g., 15).</td></tr><tr><td><b>n_observations</b></td><td>(INT) Number of raw PokéAPI learnset observations aggregated into the hyperedge (e.g., 42).</td></tr></tbody></table></div>
+    <tr><td><b>layer</b></td><td>(STRING) Multiplex layer identifier (e.g., level-up).</td></tr><tr><td><b>move_ids</b></td><td>(LIST[INT]) PokéAPI move identifiers represented by the hyperedge (e.g., [85]).</td></tr><tr><td><b>move_names</b></td><td>(LIST[STRING]) Move names represented by the hyperedge (e.g., [thunderbolt]).</td></tr><tr><td><b>move_types</b></td><td>(LIST[STRING]) Move types represented by the hyperedge (e.g., [electric]).</td></tr><tr><td><b>damage_classes</b></td><td>(LIST[STRING]) Damage classes represented by the hyperedge (e.g., [special]).</td></tr><tr><td><b>generations</b></td><td>(LIST[STRING]) Move introduction generations represented by the hyperedge (e.g., [generation-i]).</td></tr><tr><td><b>version_groups</b></td><td>(LIST[STRING]) Version groups in which the incidence appears (e.g., [red-blue]).</td></tr><tr><td><b>learn_methods</b></td><td>(STRING) Learn method represented by the multiplex layer (e.g., level-up).</td></tr><tr><td><b>min_level</b></td><td>(LIST[INT]) Minimum nonzero levels at which a move is learned, when available (e.g., [15]).</td></tr><tr><td><b>n_observations</b></td><td>(LIST[INT]) Numbers of raw PokéAPI learnset observations aggregated into the hyperedge (e.g., [42]).</td></tr></tbody></table></div>
 
         <div class="chart-panel">
             <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
@@ -176,7 +176,7 @@
 <ul class="versions-list">
 
         <li>
-            <span class="version-label">Version 1.0</span>
+            <span class="version-label">Version 1.0.0</span>
             <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/pokemon-moves-learn-method-multiplex/pokemon-moves-learn-method-multiplex.hgx.gz" target="_blank" rel="noopener noreferrer">
                 <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(277.9 KB)</span>
             </a>
