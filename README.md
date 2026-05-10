@@ -1,7 +1,5 @@
-# Hypergraphx-data Website
-
 <p align="center">
-  <img src="static/images/logo_cropped-removedbg.png" alt="Hypergraphx-data logo" width="160">
+  <img src="static/images/logo.png" alt="Hypergraphx-data" width="260">
 </p>
 
 This repository hosts the generated GitHub Pages website for the Hypergraphx-data dataset catalog.
