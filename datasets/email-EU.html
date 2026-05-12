@@ -137,7 +137,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>original_timestamp</b></td><td>(INT) Email exchange original time (e.g., 1064021027).</td></tr><tr><td><b>time</b></td><td>(INT) Email exchange time (e.g., 0).</td></tr><tr><td><b>weight</b></td><td>(INT) Email exchange weight (e.g., 1).</td></tr></tbody></table></div>
+    <tr><td><b>original_timestamp</b></td><td>(INT) Raw email timestamp from the source data, recorded at one-second resolution (e.g., 1064021027).</td></tr><tr><td><b>time</b></td><td>(INT) Normalized email timestamp, equal to original_timestamp minus the first raw timestamp in the dataset (e.g., 0).</td></tr><tr><td><b>weight</b></td><td>(INT) Number of email records collapsed into this sender/recipient set at the same timestamp (e.g., 1).</td></tr></tbody></table></div>
 
         <div class="chart-panel">
             <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
@@ -173,7 +173,7 @@
                 <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(5.3 MB)</span>
             </a>
             <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/email-EU/email-EU.json.gz" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(2.3 MB)</span>
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(2.4 MB)</span>
             </a>
         </li>
         </ul>

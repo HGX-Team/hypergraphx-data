@@ -12,12 +12,15 @@
 - `generate_pokemon-locations-region-multiplex.py`
 
 ## Steps
-1. Generate or provide the PokéAPI-derived CSV files listed in the script docstring.
+1. Generate or provide the PokéAPI-derived CSV files:
+   ```bash
+   python scripts/maintenance/get_pokemon_csvs.py --output-dir /path/to/pokemon-data
+   ```
 2. Run:
    ```bash
    python reproducibility/pokemon-locations-region-multiplex/generate_pokemon-locations-region-multiplex.py /path/to/pokemon-data --output-dir data/pokemon-locations-region-multiplex
    ```
-3. Validate that the generated JSON and HGX files load with HypergraphX.
+3. Validate the printed node/edge counts and generated file sizes.
 
 ## License
 - License: BSD-3-Clause

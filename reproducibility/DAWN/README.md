@@ -18,8 +18,8 @@ The source archive is `DAWN.tar.gz`, linked from the ARB dataset page.
    ```bash
    python reproducibility/DAWN/generate_DAWN.py /path/to/DAWN.tar.gz --output-dir data/DAWN
    ```
-3. Validate that both `DAWN.json` and `DAWN.hgx` load with HypergraphX.
+3. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
-- `DAWN.json.gz`
-- `DAWN.hgx.gz`
+- `DAWN.json`
+- `DAWN.hgx`

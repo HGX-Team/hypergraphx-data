@@ -8,12 +8,14 @@
 - https://github.com/jianhao2016/AllSet?tab=readme-ov-file
 
 ## Script
-- Reproducibility script not yet available.
+- `generate_20newsW100.py`
 
 ## Steps
 1. Download or access the source data from the link above.
-2. Run the generation script to produce the dataset JSON.
-3. Validate the output JSON and file sizes.
+2. Place the raw files in a directory and pass that path as `raw_dir`.
+3. Run `python reproducibility/20newsW100/generate_20newsW100.py /path/to/raw --output-dir /path/to/output`.
+4. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
-- 20newsW100.json.gz
+- `20newsW100.json`
+- `20newsW100.hgx`

@@ -19,7 +19,7 @@ Build maximal cliques of pairwise contacts at each timestamp; attach class/sex m
    ```bash
    python reproducibility/contacts-primary-school/generate_contacts-primary-school.py /path/to/DatasetHigherOrder --output-dir data/contacts-primary-school
    ```
-3. Validate that the generated JSON and HGX files load with HypergraphX.
+3. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
 - `contacts-primary-school.json`

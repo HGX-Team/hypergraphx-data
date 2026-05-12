@@ -8,12 +8,14 @@
 - https://www.cs.cornell.edu/~arb/data/trivago-clicks/
 
 ## Script
-- Reproducibility script not yet available.
+- `generate_trivago-clicks.py`
 
 ## Steps
 1. Download or access the source data from the link above.
-2. Run the generation script to produce the dataset JSON.
-3. Validate the output JSON and file sizes.
+2. Place the raw files in a directory and pass that path as `raw_dir`.
+3. Run `python reproducibility/trivago-clicks/generate_trivago-clicks.py /path/to/raw --output-dir /path/to/output`.
+4. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
-- trivago-clicks.json.gz
+- `trivago-clicks.json`
+- `trivago-clicks.hgx`

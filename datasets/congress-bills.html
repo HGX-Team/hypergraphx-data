@@ -145,7 +145,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>original_timestamp</b></td><td>(INT) Bill original time (e.g., 720261).</td></tr><tr><td><b>time</b></td><td>(INT) Bill time (e.g., 615).</td></tr><tr><td><b>weight</b></td><td>(INT) Bill weight (e.g., 6).</td></tr></tbody></table></div>
+    <tr><td><b>original_timestamp</b></td><td>(INT) Raw bill-introduction timestamp from the Cornell source file, measured in days (e.g., 720261).</td></tr><tr><td><b>time</b></td><td>(INT) Normalized bill-introduction timestamp, equal to original_timestamp minus the minimum raw timestamp in the dataset (e.g., 615).</td></tr><tr><td><b>weight</b></td><td>(INT) Number of bills collapsed into this sponsor/cosponsor set at the same introduction time (e.g., 6).</td></tr></tbody></table></div>
 
         <div class="chart-panel">
             <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
@@ -181,7 +181,7 @@
                 <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(9.3 MB)</span>
             </a>
             <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/congress-bills/congress-bills.json.gz" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(3.4 MB)</span>
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(3.5 MB)</span>
             </a>
         </li>
         </ul>

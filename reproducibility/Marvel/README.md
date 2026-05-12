@@ -1,7 +1,7 @@
-# marvel reproducibility
+# Marvel reproducibility
 
 ## Dataset
-- Name: marvel
+- Name: Marvel
 - Description: A hypergraph representing comic book characters as nodes and the comic books they co-appear in as hyperedges. This dataset combines information from the DC-MARVEL Comic Characters Dataset and the Marvel Universe Social Network Dataset to create a comprehensive representation of character interactions within the Marvel universe. Not all characters have complete information.
 
 ## Source data
@@ -16,4 +16,4 @@
 3. Validate the output JSON and file sizes.
 
 ## Output
-- marvel.json.gz
+- Marvel.json.gz

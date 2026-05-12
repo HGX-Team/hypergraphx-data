@@ -19,7 +19,7 @@ Build maximal cliques of pairwise contacts at each timestamp; attach attendee id
    ```bash
    python reproducibility/contacts-conference-sfhh/generate_contacts-conference-sfhh.py /path/to/DatasetHigherOrder --output-dir data/contacts-conference-sfhh
    ```
-3. Validate that the generated JSON and HGX files load with HypergraphX.
+3. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
 - `contacts-conference-sfhh.json`

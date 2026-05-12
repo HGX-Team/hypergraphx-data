@@ -19,7 +19,7 @@ Build maximal cliques of pairwise contacts at each timestamp; attach hospital ro
    ```bash
    python reproducibility/contacts-hospital/generate_contacts-hospital.py /path/to/DatasetHigherOrder --output-dir data/contacts-hospital
    ```
-3. Validate that the generated JSON and HGX files load with HypergraphX.
+3. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
 - `contacts-hospital.json`

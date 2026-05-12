@@ -8,19 +8,19 @@
 - https://www.cs.cornell.edu/~arb/data/cat-edge-Cooking/
 
 ## Script
-- `load_cooking.ipynb`
+- `generate_cooking-southern_us.py`
 
-The script expects the source data directory names used by the original conversion workflow; adjust paths if running from another location.
+Use the raw files from the linked source and keep the upstream filenames expected by the reproduction code.
 
 ## Steps
 1. Download or access the source data from the link above.
-2. Place the source data in the directory expected by the script.
+2. Place the raw files in a directory and pass that path as `raw_dir`.
 3. Run:
    ```bash
-   Open and run `load_cooking.ipynb` with the HypergraphX development environment.
+   python reproducibility/cooking-southern_us/generate_cooking-southern_us.py /path/to/cat-edge-Cooking --output-dir /path/to/output
    ```
-4. Validate that the generated JSON and HGX files load with HypergraphX, then gzip them for publication.
+4. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
-- cooking-southern_us.json.gz
-- cooking-southern_us.hgx.gz
+- `cooking-southern_us.json`
+- `cooking-southern_us.hgx`

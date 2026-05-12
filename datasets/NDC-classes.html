@@ -107,9 +107,9 @@
             <h4><i class="fa-solid fa-chart-column section-title-icon"></i> Basic statistics</h4>
             <ul>
                 <li><b>Nodes:</b> 1161</li> <!-- Nodes will be replaced dynamically -->
-                <li><b>Hyperedges:</b> 49726</li> <!-- Hyperedges will be replaced dynamically -->
-                <li><b>Unique hyperedges:</b> 1090</li>
-                <li><b>Max size hyperedge:</b> 39</li>
+                <li><b>Hyperedges:</b> 19160</li> <!-- Hyperedges will be replaced dynamically -->
+                <li><b>Unique hyperedges:</b> 1088</li>
+                <li><b>Max size hyperedge:</b> 24</li>
             </ul>
         </div>
 
@@ -134,7 +134,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>substance_name</b></td><td>(STRING) Drug substance name or pharmacological class (e.g., radioactive diagnostic agent [epc]).</td></tr></tbody></table></div>
+    <tr><td><b>class_label</b></td><td>(STRING) Drug class label assigned in the NDC Directory (e.g., radioactive diagnostic agent [epc]).</td></tr></tbody></table></div>
 
         <!-- Edges Metadata -->
         
@@ -145,7 +145,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>label</b></td><td>(LIST[STRING]) A drug label (e.g., [amyvid (0002-1200)]).</td></tr><tr><td><b>original_timestamp</b></td><td>(INT) A drug original time (e.g., 63474192000000).</td></tr><tr><td><b>time</b></td><td>(INT) A drug time (e.g., 3547497600000).</td></tr><tr><td><b>weight</b></td><td>(INT) A drug weight (e.g., 1).</td></tr></tbody></table></div>
+    <tr><td><b>drug_labels</b></td><td>(LIST[STRING]) Drug labels represented by this timestamped class-label set; multiple labels indicate duplicate raw records collapsed into the same temporal hyperedge (e.g., [(0002-1200)]).</td></tr><tr><td><b>original_timestamp</b></td><td>(INT) Raw first-marketed timestamp from the Cornell source file, before shifting the temporal origin (e.g., 63474192000000).</td></tr><tr><td><b>time</b></td><td>(INT) Normalized first-marketed timestamp, equal to original_timestamp minus the minimum raw timestamp in the dataset (e.g., 3547497600000).</td></tr><tr><td><b>weight</b></td><td>(INT) Number of raw drug records collapsed into this timestamped hyperedge (e.g., 1).</td></tr></tbody></table></div>
 
         <div class="chart-panel">
             <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
@@ -178,10 +178,10 @@
         <li>
             <span class="version-label">Version 1.0.0</span>
             <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/NDC-classes/NDC-classes.hgx.gz" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(966.2 KB)</span>
+                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(734.5 KB)</span>
             </a>
             <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/NDC-classes/NDC-classes.json.gz" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(632.4 KB)</span>
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(521.9 KB)</span>
             </a>
         </li>
         </ul>
@@ -190,7 +190,7 @@
         </div>
 
         <div id="related"></div>
-        <div class="mb-4" id="relatedDatasets" data-current-dataset="NDC-classes" data-vertices="1161" data-edges="49726">
+        <div class="mb-4" id="relatedDatasets" data-current-dataset="NDC-classes" data-vertices="1161" data-edges="19160">
             <h4><i class="fa-solid fa-diagram-project section-title-icon"></i> Related datasets</h4>
             <div class="related-datasets-list" id="relatedDatasetsList">
                 <div class="text-muted">Loading related datasets...</div>
@@ -220,23 +220,7 @@
                 <pre class="bibtex-container" id="bibtexContent">
                     <button class="copy-button" onclick="copyBibTex()">Copy</button>
                     <span class="copy-status" id="copyStatus">Copied!</span>
-                    @InProceedings{klimt2004enron,
- author="Klimt, Bryan
- and Yang, Yiming",
- editor="Boulicaut, Jean-Fran{\c{c}}ois
- and Esposito, Floriana
- and Giannotti, Fosca
- and Pedreschi, Dino",
- title="The Enron Corpus: A New Dataset for Email Classification Research",
- booktitle="Machine Learning: ECML 2004",
- year="2004",
- publisher="Springer Berlin Heidelberg",
- address="Berlin, Heidelberg",
- pages="217--226",
- isbn="978-3-540-30115-8"
-}
-
-@article{benson2018simplicial,
+                    @article{benson2018simplicial,
  author = {Benson, Austin R. and Abebe, Rediet and Schaub, Michael T. and Jadbabaie, Ali and Kleinberg, Jon},
  title = {Simplicial closure and higher-order link prediction},
  year = {2018},

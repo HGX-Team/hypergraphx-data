@@ -19,7 +19,7 @@ Build maximal cliques of pairwise contacts at each timestamp; attach department 
    ```bash
    python reproducibility/contacts-workplace/generate_contacts-workplace.py /path/to/DatasetHigherOrder --output-dir data/contacts-workplace
    ```
-3. Validate that the generated JSON and HGX files load with HypergraphX.
+3. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
 - `contacts-workplace.json`

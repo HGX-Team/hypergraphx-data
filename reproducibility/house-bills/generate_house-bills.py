@@ -1,8 +1,21 @@
+#!/usr/bin/env python3
+"""Generate house-bills from local ARB raw files."""
+
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
 from hypergraphx import Hypergraph
+from hypergraphx.readwrite import load_hypergraph, save_hypergraph
 
 
-def load_hyperedges(name):
-    path = "{}/hyperedges-{}.txt".format(name, name)
+DATASET_NAME = "house-bills"
+DEFAULT_RAW_DIR = Path(DATASET_NAME)
+
+
+def load_hyperedges(raw_dir: Path):
+    path = raw_dir / f"hyperedges-{DATASET_NAME}.txt"
     hyperedges = {}
     weighted = False
     with open(path) as f:
@@ -16,10 +29,11 @@ def load_hyperedges(name):
     
     return hyperedges, weighted
 
-def load_nodes(name):
-    path1 = "{}/label-names-{}.txt".format(name, name)
-    path2 = "{}/node-labels-{}.txt".format(name, name)
-    path3 = "{}/node-names-{}.txt".format(name, name)
+
+def load_nodes(raw_dir: Path):
+    path1 = raw_dir / f"label-names-{DATASET_NAME}.txt"
+    path2 = raw_dir / f"node-labels-{DATASET_NAME}.txt"
+    path3 = raw_dir / f"node-names-{DATASET_NAME}.txt"
 
     f = open(path1, "r")
     labels = f.readlines()
@@ -46,38 +60,49 @@ def load_nodes(name):
     return nodes
 
 
-from hypergraphx.readwrite import save_hypergraph
+def build_hypergraph(raw_dir: Path) -> Hypergraph:
+    h, w = load_hyperedges(raw_dir)
+    n = load_nodes(raw_dir)
 
-if __name__ == "__main__":
-    dataset_name = "house-bills"
-    h, w = load_hyperedges(dataset_name)
-    n = load_nodes(dataset_name)
-
-    H = Hypergraph(weighted=w)
+    hypergraph = Hypergraph(weighted=w)
 
     for node in n:
-        H.add_node(node, metadata=n[node])
+        hypergraph.add_node(node, metadata=n[node])
 
     for hyperedge in h:
         if w:
-            H.add_edge(hyperedge, weight=h[hyperedge])
+            hypergraph.add_edge(hyperedge, weight=h[hyperedge])
         else:
-            H.add_edge(hyperedge)
+            hypergraph.add_edge(hyperedge)
 
-    H.set_attr_to_hypergraph_metadata("name", dataset_name)
-    H.set_attr_to_hypergraph_metadata("version", "1.0.0")
-    save_hypergraph(H, "{}.json".format(dataset_name))
-    save_hypergraph(H, "{}.hgx".format(dataset_name), binary=True)
+    return hypergraph
 
-    from hypergraphx.readwrite import load_hypergraph
-    a = load_hypergraph("{}.json".format(dataset_name))
-    print(a.get_hypergraph_metadata())
-    print(len(a.get_nodes()))
-    print(len(a.get_edges()))
-    print(sum(a.get_weights()))
-    b = load_hypergraph("{}.hgx".format(dataset_name))
-    print(b.get_hypergraph_metadata())
-    print(len(b.get_nodes()))
-    print(len(b.get_edges()))
-    print(sum(a.get_weights()))
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("raw_dir", nargs="?", type=Path, default=DEFAULT_RAW_DIR)
+    parser.add_argument("--output-dir", type=Path, default=Path("."))
+    return parser.parse_args()
+
+
+def save_and_validate(hypergraph: Hypergraph, output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    json_path = output_dir / f"{DATASET_NAME}.json"
+    hgx_path = output_dir / f"{DATASET_NAME}.hgx"
+    save_hypergraph(hypergraph, str(json_path), fmt="json")
+    save_hypergraph(hypergraph, str(hgx_path), fmt="pickle")
+    for path in (json_path, hgx_path):
+        loaded = load_hypergraph(str(path))
+        print(f"{path}: nodes={len(loaded.get_nodes())} edges={len(loaded.get_edges())}")
+
+
+def main() -> None:
+    args = parse_args()
+    hypergraph = build_hypergraph(args.raw_dir)
+    hypergraph.set_attr_to_hypergraph_metadata("name", DATASET_NAME)
+    hypergraph.set_attr_to_hypergraph_metadata("version", "1.0.0")
+    save_and_validate(hypergraph, args.output_dir)
+
+
+if __name__ == "__main__":
+    main()

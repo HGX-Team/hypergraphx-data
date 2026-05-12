@@ -8,19 +8,19 @@
 - https://www.cs.cornell.edu/~arb/data/cat-edge-algebra-questions/
 
 ## Script
-- `load_cat-edge.ipynb`
+- `generate_cat-edge-algebra-questions.py`
 
-The script expects the source data directory names used by the original conversion workflow; adjust paths if running from another location.
+Use the raw files from the linked source and keep the upstream filenames expected by the reproduction code.
 
 ## Steps
 1. Download or access the source data from the link above.
-2. Place the source data in the directory expected by the script.
+2. Place the raw files in a directory and pass that path as `raw_dir`.
 3. Run:
    ```bash
-   Open and run `load_cat-edge.ipynb` with the HypergraphX development environment.
+   python reproducibility/cat-edge-algebra-questions/generate_cat-edge-algebra-questions.py /path/to/cat-edge-algebra-questions --output-dir /path/to/output
    ```
-4. Validate that the generated JSON and HGX files load with HypergraphX, then gzip them for publication.
+4. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
-- cat-edge-algebra-questions.json.gz
-- cat-edge-algebra-questions.hgx.gz
+- `cat-edge-algebra-questions.json`
+- `cat-edge-algebra-questions.hgx`

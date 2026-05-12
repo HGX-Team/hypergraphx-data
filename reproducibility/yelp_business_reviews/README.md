@@ -8,12 +8,14 @@
 - https://github.com/jianhao2016/AllSet/tree/6281a2f1a91f6f26040777bb0b2578fc035dc57a/data/raw_data
 
 ## Script
-- Reproducibility script not yet available.
+- `generate_yelp_business_reviews.py`
 
 ## Steps
 1. Download or access the source data from the link above.
-2. Run the generation script to produce the dataset JSON.
-3. Validate the output JSON and file sizes.
+2. Place the raw files in a directory and pass that path as `raw_dir`.
+3. Run `python reproducibility/yelp_business_reviews/generate_yelp_business_reviews.py /path/to/raw --output-dir /path/to/output`.
+4. Validate the printed node/edge counts and generated file sizes.
 
 ## Output
-- yelp_business_reviews.json.gz
+- `yelp_business_reviews.json`
+- `yelp_business_reviews.hgx`

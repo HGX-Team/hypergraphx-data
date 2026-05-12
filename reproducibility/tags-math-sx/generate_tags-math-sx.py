@@ -1,9 +1,21 @@
+#!/usr/bin/env python3
+"""Generate tags-math-sx from local simplex raw files."""
+
+from __future__ import annotations
+
+import argparse
 import os
+from pathlib import Path
 
 from hypergraphx import Hypergraph
 from hypergraphx import (
     TemporalHypergraph,
 ) 
+from hypergraphx.readwrite import load_hypergraph, save_hypergraph
+
+
+DATASET_NAME = "tags-math-sx"
+DEFAULT_RAW_DIR = Path(DATASET_NAME)
 
 
 def load_timestamped_simplex_with_metadata(dataset_path):
@@ -120,23 +132,31 @@ def load_timestamped_simplex_with_metadata(dataset_path):
     return temporal_hypergraph
 
 
-from hypergraphx.readwrite import save_hypergraph
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("raw_dir", nargs="?", type=Path, default=DEFAULT_RAW_DIR)
+    parser.add_argument("--output-dir", type=Path, default=Path("."))
+    return parser.parse_args()
+
+
+def save_and_validate(hypergraph, output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    json_path = output_dir / f"{DATASET_NAME}.json"
+    hgx_path = output_dir / f"{DATASET_NAME}.hgx"
+    save_hypergraph(hypergraph, str(json_path), fmt="json")
+    save_hypergraph(hypergraph, str(hgx_path), fmt="pickle")
+    for path in (json_path, hgx_path):
+        loaded = load_hypergraph(str(path))
+        print(f"{path}: nodes={len(loaded.get_nodes())} edges={len(loaded.get_edges())}")
+
+
+def main() -> None:
+    args = parse_args()
+    hypergraph = load_timestamped_simplex_with_metadata(str(args.raw_dir))
+    hypergraph.set_attr_to_hypergraph_metadata("name", DATASET_NAME)
+    hypergraph.set_attr_to_hypergraph_metadata("version", "1.0.0")
+    save_and_validate(hypergraph, args.output_dir)
+
 
 if __name__ == "__main__":
-    dataset_path_to_load = "tags-math-sx"
-    dataset_name = "tags-math-sx"
-    hypergraph = load_timestamped_simplex_with_metadata(dataset_path_to_load)
-    hypergraph.set_attr_to_hypergraph_metadata("name", dataset_name)
-    hypergraph.set_attr_to_hypergraph_metadata("version", "1.0.0")
-    save_hypergraph(hypergraph, "{}.json".format(dataset_name))
-    save_hypergraph(hypergraph, "{}.hgx".format(dataset_name), binary=True)
-
-    from hypergraphx.readwrite import load_hypergraph
-    a = load_hypergraph("{}.json".format(dataset_name))
-    print(a.get_hypergraph_metadata())
-    print(len(a.get_nodes()))
-    print(len(a.get_edges()))
-    b = load_hypergraph("{}.hgx".format(dataset_name))
-    print(b.get_hypergraph_metadata())
-    print(len(b.get_nodes()))
-    print(len(b.get_edges()))
+    main()
