@@ -2,7 +2,7 @@
 
 ## Dataset
 - Name: foodwebanalysis
-- Description: The data is collected from the Florida bay foodweb. The bifans of the network is extracted to build submodular hyperedges. Node labels/classes indicate whether the corresponding species is a producer, an invertebrate or a vertebrate (fish, birds or large animals).
+- Description: The data is collected from the Florida Bay food web. Bifan motifs in the original directed carbon-flow network are converted into submodular hyperedges. Available node labels/classes indicate whether a food-web compartment is a producer, a low-level consumer, or a high-level consumer.
 
 ## Source data
 - https://sites.google.com/view/panli-purdue/datasets/foodweb?authuser=0

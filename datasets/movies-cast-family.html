@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>foodwebanalysis</title>
-    <meta name="description" content="The data is collected from the Florida Bay food web. Bifan motifs in the original directed carbon-flow network are converted into submodular hyperedges. Available node labels/classes indicate whether a food-web compartment is a producer, a low-level consumer, or a high-level consumer.">
-    <meta property="og:title" content="foodwebanalysis">
-    <meta property="og:description" content="The data is collected from the Florida Bay food web. Bifan motifs in the original directed carbon-flow network are converted into submodular hyperedges. Available node labels/classes indicate whether a food-web compartment is a producer, a low-level consumer, or a high-level consumer.">
+    <title>movies-cast-family</title>
+    <meta name="description" content="Movie-cast hypergraph for the Family genre, built from The Movies Dataset. Nodes are actors and hyperedges are normalized movie casts. Movies with multiple genres also appear in the corresponding other genre-specific datasets.">
+    <meta property="og:title" content="movies-cast-family">
+    <meta property="og:description" content="Movie-cast hypergraph for the Family genre, built from The Movies Dataset. Nodes are actors and hyperedges are normalized movie casts. Movies with multiple genres also appear in the corresponding other genre-specific datasets.">
     <meta property="og:type" content="article">
     <meta property="og:image" content="../static/images/logo_cropped-removedbg.png">
     <link rel="icon" type="image/png" href="../static/images/logo_cropped-removedbg.png">
@@ -74,23 +74,23 @@
         <nav aria-label="breadcrumb" class="breadcrumb-container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Datasets</a></li>
-                <li class="breadcrumb-item active" aria-current="page">foodwebanalysis</li>
+                <li class="breadcrumb-item active" aria-current="page">movies-cast-family</li>
             </ol>
         </nav>
 
-        <h1 class="dataset-title">foodwebanalysis</h1>
+        <h1 class="dataset-title">movies-cast-family</h1>
         
 
         <!-- Dataset Tags -->
         <div class="mb-3 text-center dataset-tags">
             <h4 style="display: inline;">Tags: </h4>
-            <span><a class="tag tag-link" href="../index.html?tags=Undirected" aria-label="Filter catalog by tag Undirected">Undirected</a> <a class="tag tag-link" href="../index.html?tags=Biology" aria-label="Filter catalog by tag Biology">Biology</a></span> <!-- Tags will be replaced dynamically -->
+            <span><a class="tag tag-link" href="../index.html?tags=Undirected" aria-label="Filter catalog by tag Undirected">Undirected</a> <a class="tag tag-link" href="../index.html?tags=Weighted" aria-label="Filter catalog by tag Weighted">Weighted</a> <a class="tag tag-link" href="../index.html?tags=Movies" aria-label="Filter catalog by tag Movies">Movies</a> <a class="tag tag-link" href="../index.html?tags=Culture" aria-label="Filter catalog by tag Culture">Culture</a></span> <!-- Tags will be replaced dynamically -->
         </div>
 
         <!-- Dataset Description -->
         <div class="mb-3">
             <h4><i class="fa-solid fa-circle-info section-title-icon"></i> Description</h4>
-            <p>The data is collected from the Florida Bay food web. Bifan motifs in the original directed carbon-flow network are converted into submodular hyperedges. Available node labels/classes indicate whether a food-web compartment is a producer, a low-level consumer, or a high-level consumer.</p> <!-- Description will be replaced dynamically -->
+            <p>Movie-cast hypergraph for the Family genre, built from The Movies Dataset. Nodes are actors and hyperedges are normalized movie casts. Movies with multiple genres also appear in the corresponding other genre-specific datasets.</p> <!-- Description will be replaced dynamically -->
         </div>
 
         <div class="dataset-mini-nav" aria-label="Jump to section">
@@ -106,10 +106,10 @@
         <div class="mb-3" id="stats">
             <h4><i class="fa-solid fa-chart-column section-title-icon"></i> Basic statistics</h4>
             <ul>
-                <li><b>Nodes:</b> 128</li> <!-- Nodes will be replaced dynamically -->
-                <li><b>Hyperedges:</b> 127497</li> <!-- Hyperedges will be replaced dynamically -->
-                <li><b>Unique hyperedges:</b> 127497</li>
-                <li><b>Max size hyperedge:</b> 4</li>
+                <li><b>Nodes:</b> 23407</li> <!-- Nodes will be replaced dynamically -->
+                <li><b>Hyperedges:</b> 2658</li> <!-- Hyperedges will be replaced dynamically -->
+                <li><b>Unique hyperedges:</b> 2658</li>
+                <li><b>Max size hyperedge:</b> 312</li>
             </ul>
         </div>
 
@@ -123,7 +123,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>name</b></td><td>(STRING) Dataset name (e.g., foodwebanalysis).</td></tr><tr><td><b>type</b></td><td>(STRING) Hypergraph type (e.g., Hypergraph).</td></tr><tr><td><b>version</b></td><td>(STRING) Dataset version (e.g., 1.0.0).</td></tr><tr><td><b>weighted</b></td><td>(BOOL) Whether repeated bifan hyperedges are stored as edge weights (e.g., true).</td></tr></tbody></table></div>
+    <tr><td><b>name</b></td><td>(STRING) Dataset name (e.g., movies-cast-family).</td></tr><tr><td><b>type</b></td><td>(STRING) Hypergraph type (e.g., Hypergraph).</td></tr><tr><td><b>version</b></td><td>(STRING) Dataset version (e.g., 1.0.0).</td></tr><tr><td><b>weighted</b></td><td>(BOOL) Whether repeated movie casts in this genre are stored as edge weights (e.g., true).</td></tr><tr><td><b>genre</b></td><td>(STRING) Movie genre used to build this dataset (e.g., Family).</td></tr><tr><td><b>node_type</b></td><td>(STRING) Semantic type of nodes (e.g., actor).</td></tr><tr><td><b>edge_type</b></td><td>(STRING) Semantic type of hyperedges (e.g., movie_cast).</td></tr></tbody></table></div>
 
         <!-- Nodes Metadata -->
         
@@ -134,7 +134,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>species</b></td><td>(STRING) Species, taxon, or food-web compartment name from Florida-bay-meta.csv (e.g., Thalassia).</td></tr><tr><td><b>label</b></td><td>(INT) Source trophic class code: 1=producer, 2=low-level consumer, 3=high-level consumer; blank when absent.</td></tr><tr><td><b>trophic_class</b></td><td>(STRING) Human-readable trophic class derived from label (e.g., producer).</td></tr></tbody></table></div>
+    <tr><td><b>tmdb_person_id</b></td><td>(INT) TMDB person identifier for the actor (e.g., 31).</td></tr><tr><td><b>name</b></td><td>(STRING) Actor name from credits.csv (e.g., Tom Hanks).</td></tr><tr><td><b>gender</b></td><td>(INT) TMDB gender code for the actor; 0=unknown/not specified, 1=female, 2=male (e.g., 2).</td></tr></tbody></table></div>
 
         <!-- Edges Metadata -->
         
@@ -145,7 +145,7 @@
                 <tr><th>Property</th><th>Description</th></tr>
             </thead>
             <tbody>
-    <tr><td><b>weight</b></td><td>(INT) Number of duplicate bifan rows collapsed into this normalized 4-species hyperedge.</td></tr></tbody></table></div>
+    <tr><td><b>movie_ids</b></td><td>(LIST[STRING]) TMDB movie identifiers represented by this normalized cast hyperedge (e.g., [862]).</td></tr><tr><td><b>titles</b></td><td>(LIST[STRING]) Movie titles represented by this normalized cast hyperedge (e.g., [Toy Story]).</td></tr><tr><td><b>original_languages</b></td><td>(LIST[STRING]) Original language codes for the represented movies (e.g., [en]).</td></tr><tr><td><b>release_years</b></td><td>(LIST[INT]) Release years for represented movies when available (e.g., [1995]).</td></tr><tr><td><b>weight</b></td><td>(INT) Number of movies collapsed into this normalized cast hyperedge.</td></tr></tbody></table></div>
 
         <div class="chart-panel">
             <h4><i class="fa-solid fa-chart-bar section-title-icon"></i> Hyperedge size distribution</h4>
@@ -177,11 +177,11 @@
 
         <li>
             <span class="version-label">Version 1.0.0</span>
-            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/foodwebanalysis/foodwebanalysis.hgx.gz" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(2.3 MB)</span>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/movies-cast-family/movies-cast-family.hgx.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-zipper"></i> Binary <span class="download-size">(658.5 KB)</span>
             </a>
-            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/foodwebanalysis/foodwebanalysis.json.gz" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(400.7 KB)</span>
+            <a href="https://cricca.disi.unitn.it/datasets/hypergraphx-data/movies-cast-family/movies-cast-family.json.gz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-alt"></i> JSON <span class="download-size">(556.6 KB)</span>
             </a>
         </li>
         </ul>
@@ -190,7 +190,7 @@
         </div>
 
         <div id="related"></div>
-        <div class="mb-4" id="relatedDatasets" data-current-dataset="foodwebanalysis" data-vertices="128" data-edges="127497">
+        <div class="mb-4" id="relatedDatasets" data-current-dataset="movies-cast-family" data-vertices="23407" data-edges="2658">
             <h4><i class="fa-solid fa-diagram-project section-title-icon"></i> Related datasets</h4>
             <div class="related-datasets-list" id="relatedDatasetsList">
                 <div class="text-muted">Loading related datasets...</div>
@@ -201,9 +201,10 @@
         <!-- Provenance -->
         <div class="mb-3" id="provenance">
             <h4><i class="fa-solid fa-link section-title-icon"></i> Provenance</h4>
-            <p><strong>Source:</strong> <a href="https://sites.google.com/view/panli-purdue/datasets/foodweb?authuser=0" target="_blank" rel="noopener noreferrer">https://sites.google.com/view/panli-purdue/datasets/foodweb?authuser=0</a></p>
-<p><strong>License:</strong> <span class="text-muted">Not specified. Please refer to the original source for licensing terms.</span></p>
-<p><strong>Reproducibility:</strong> <a href="https://github.com/HGX-Team/hypergraphx-data/tree/main/reproducibility/foodwebanalysis" target="_blank" rel="noopener noreferrer">Instructions and scripts</a></p>
+            <p><strong>Source:</strong> <a href="https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset</a></p>
+<p><strong>License:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer"><span class="badge bg-success">CC0 Public Domain</span></a></p>
+<p class="text-muted small mb-2">Data derived from The Movies Dataset on Kaggle using movies_metadata.csv and credits.csv. The Kaggle dataset is listed as CC0: Public Domain; the movie details and credits were collected from the TMDB Open API. This product uses TMDB data but is not endorsed or certified by TMDB.</p>
+<p><strong>Reproducibility:</strong> <a href="https://github.com/HGX-Team/hypergraphx-data/tree/main/reproducibility/movies-cast-family" target="_blank" rel="noopener noreferrer">Instructions and scripts</a></p>
         </div>
 
         <!-- BibTeX Display -->
@@ -220,13 +221,7 @@
                 <pre class="bibtex-container" id="bibtexContent">
                     <button class="copy-button" onclick="copyBibTex()">Copy</button>
                     <span class="copy-status" id="copyStatus">Copied!</span>
-                    @inproceedings{li2017inhomogeneous,
-  title={Inhomogeneous hypergraph clustering with applications},
-  author={Li, Pan and Milenkovic, Olgica},
-  booktitle={Advances in Neural Information Processing Systems},
-  pages={2308--2318},
-  year={2017}
-}
+                    No BibTeX entry is currently available. Please refer to the original source: https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset
                 </pre>
             </div>
         </div>
@@ -304,9 +299,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const hyperedgeBins = [4];
-const hyperedgeBinLabels = ["4"];
-const hyperedgeFrequencies = [127497];
+    const hyperedgeBins = [2, 3, 4, 6, 8, 10, 13, 17, 22, 29, 37, 49, 63, 83, 108, 141, 312];
+const hyperedgeBinLabels = ["2", "3", "4\u20135", "6\u20137", "8\u20139", "10\u201312", "13\u201316", "17\u201321", "22\u201328", "29\u201336", "37\u201348", "49\u201362", "63\u201382", "83\u2013107", "108\u2013140", "141\u2013182", "312"];
+const hyperedgeFrequencies = [47, 68, 340, 351, 317, 455, 443, 287, 155, 93, 43, 30, 16, 6, 2, 4, 1];
     const timeSeriesX = [];
 const timeSeriesY = [];
 const timeSeriesStart = [];
@@ -314,9 +309,9 @@ const timeSeriesEnd = [];
 const timeIsEpoch = false;
 const timeBucketSeconds = 0;
 const timeGranularity = "unit";
-    const degreeBins = [6, 33, 119, 182, 279, 427, 654, 1002, 1535, 2352, 3603, 5520, 8455, 12953, 19843];
-const degreeBinLabels = ["6\u20138", "33\u201350", "119\u2013181", "182\u2013278", "279\u2013426", "427\u2013653", "654\u20131001", "1002\u20131534", "1535\u20132351", "2352\u20133602", "3603\u20135519", "5520\u20138454", "8455\u201312952", "12953\u201319842", "19843"];
-const degreeFrequencies = [1, 1, 2, 4, 5, 6, 8, 3, 8, 22, 24, 27, 10, 4, 1];
+    const degreeBins = [1, 2, 3, 4, 5, 6, 8, 10, 13, 16, 20, 25, 40, 50, 79];
+const degreeBinLabels = ["1", "2", "3", "4", "5", "6\u20137", "8\u20139", "10\u201312", "13\u201315", "16\u201319", "20\u201324", "25\u201330", "40\u201349", "50\u201362", "79"];
+const degreeFrequencies = [18018, 2858, 1050, 537, 303, 289, 144, 105, 53, 23, 13, 9, 2, 2, 1];
     
 
     // Plot Hyperedge Size Distribution

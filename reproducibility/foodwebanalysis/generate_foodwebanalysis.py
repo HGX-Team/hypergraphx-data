@@ -13,6 +13,11 @@ from hypergraphx.readwrite import load_hypergraph, save_hypergraph
 
 DATASET_NAME = "foodwebanalysis"
 DEFAULT_RAW_DIR = Path("foodwebanalysis") / "raw"
+TROPHIC_LABELS = {
+    1: "producer",
+    2: "low-level consumer",
+    3: "high-level consumer",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -44,9 +49,11 @@ def read_node_metadata(raw_dir: Path) -> dict[int, dict[str, object]]:
             if not row:
                 continue
             node_id = int(row[0])
+            label = _parse_label(row[2])
             metadata[node_id] = {
                 "species": row[1],
-                "label": _parse_label(row[2]),
+                "label": label,
+                "trophic_class": TROPHIC_LABELS.get(label, ""),
             }
 
     return metadata
@@ -71,6 +78,8 @@ def build_hypergraph(raw_dir: Path) -> Hypergraph:
     hypergraph = Hypergraph()
     hypergraph.add_nodes(node_list=node_metadata.keys(), metadata=node_metadata)
     hypergraph.add_edges(edge_list=hyperedges)
+    hypergraph.set_attr_to_hypergraph_metadata("name", DATASET_NAME)
+    hypergraph.set_attr_to_hypergraph_metadata("version", "1.0.0")
     return hypergraph
 
 
